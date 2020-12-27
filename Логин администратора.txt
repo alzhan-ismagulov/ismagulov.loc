@@ -1,0 +1,18 @@
+Логин администратора
+login: alzhan_ismagulov@list.ru 	
+password: 123456 	
+
+
+<script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
+
+
+<!--CKEditor Media Embed-->
+<script>
+    document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+        const anchor = document.createElement( 'a' );
+        anchor.setAttribute( 'href', element.getAttribute( 'url' ) );
+        anchor.className = 'embedly-card';
+        element.appendChild( anchor );
+    } );
+</script>
+<!--/CKEditor Media Embed-->
