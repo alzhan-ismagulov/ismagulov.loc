@@ -19,15 +19,18 @@ class MessagesController extends AppController
             $messages->email = h($_SESSION['user']['email']);
             $messages->text = h($_POST['text']);
             if(\R::store($messages)) {
-                foreach ($_SESSION['file'] as $file){
-//                    $id = \R::exec("SELECT messages.id FROM messages ORDER BY messages.id DESC LIMIT 1");
+                $files = $_SESSION['file'];
+                $aliases = $_SESSION['alias'];
+                for ($index = 0 ; $index < count($files); $index ++) {
                     $message_id = $messages->id;
                     $messagefiles = \R::dispense('messagefiles');
                     $messagefiles->message_id = $message_id;
-                    $messagefiles->name = $file;
-                    \R::store($messagefiles);
-                }
+                    $messagefiles->name = $files[$index];
+                    $messagefiles->alias = $aliases[$index];
+                        \R::store($messagefiles);
                     unset($_SESSION['file']);
+                    unset($_SESSION['alias']);
+                }
                 $_SESSION['success'] = 'Сообщение отправлено';
                 $res = ['answer' => 'success', 'message' => 'Message upload'];
             } else {
@@ -145,10 +148,10 @@ class MessagesController extends AppController
         $message_id = $this->getRequestID();
         $message = \R::load('messages', $message_id);
         \R::trash($message);
-        $files = \R::getAll("SELECT messagefiles.name FROM messagefiles WHERE messagefiles.message_id = $message_id");
+        $files = \R::getAll("SELECT messagefiles.alias FROM messagefiles WHERE messagefiles.message_id = $message_id");
         foreach ($files as $file) {
-            if (file_exists('uploads/' . $file['name'])) {
-                @unlink('uploads/' . $file['name']);
+            if (file_exists('uploads/' . $file['alias'])) {
+                @unlink('uploads/' . $file['alias']);
             }
         }
         \R::exec("DELETE FROM messagefiles WHERE message_id = $message_id");
