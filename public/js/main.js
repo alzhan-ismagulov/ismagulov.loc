@@ -80,7 +80,7 @@ $(function(){
             },
             dictDefaultMessage: '<div class="dz-message">Нажмите здесь или перетащите файлы для загрузки. Можно загрузить 4 файла (до 4 Мб) форматов: .jpg, .jpeg, .png, .gif, .pdf</div>',
             dictInvalidFileType: 'Вы не можете загружать файлы данного типа. Разрешены: .jpg, .jpeg, .png, .gif, .pdf',
-            dictMaxFilesExceeded: 'Вы не можете загружать больше файлов',
+            dictMaxFilesExceeded: 'Вы  не можете загружать больше файлов',
             dictFileTooBig: 'Максимальный размер файла - 4 Мб',
             acceptedFiles: '.jpg, .jpeg, .png, .gif, .pdf',
             maxFilesize: 4

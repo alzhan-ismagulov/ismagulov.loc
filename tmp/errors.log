@@ -20571,3 +20571,83 @@
 =================
 [2020-12-27 17:51:53] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Messages/delete-files.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
 =================
+[2020-12-28 12:05:09] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:05:09] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:05:53] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:05:53] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:06:31] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:07:31] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:09:21] Текст ошибки: Контроллер app\controllers\UploadController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2020-12-28 12:09:53] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:10:50] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:11:17] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:11:36] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:12:08] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 12:12:37] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 14:03:24] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 14:05:37] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 14:09:26] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 14:11:13] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 14:11:47] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 14:13:14] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 14:14:09] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 15:41:07] Текст ошибки: SQLSTATE[HY000]: General error: 1364 Field 'alias' doesn't have a default value | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 15:43:21] Текст ошибки: SQLSTATE[HY000]: General error: 1364 Field 'alias' doesn't have a default value | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 15:44:35] Текст ошибки: SQLSTATE[HY000]: General error: 1364 Field 'alias' doesn't have a default value | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 15:47:46] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 15:47:46] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 15:55:27] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 15:55:28] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 15:56:57] Текст ошибки: SQLSTATE[HY000]: General error: 1364 Field 'alias' doesn't have a default value | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 16:05:58] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 16:05:59] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 17:16:10] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2020-12-28 17:34:17] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 17:34:17] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 17:36:51] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 17:36:51] Текст ошибки: [] operator not supported for strings | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\libs\functions.php | Строка: 113
+=================
+[2020-12-28 17:50:09] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xD0' for column 'name' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 17:55:42] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xD0' for column 'name' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 17:56:36] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-28 17:57:59] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xD0' for column 'name' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-29 03:15:47] Текст ошибки: syntax error, unexpected 'public' (T_PUBLIC), expecting end of file | Файл: C:\OSPanel\domains\ismagulova.loc\app\controllers\admin\MessagesController.php | Строка: 47
+=================

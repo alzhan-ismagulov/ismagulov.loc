@@ -107,8 +107,10 @@ function uploadFile($name, $path){
     $old_name = $_FILES[$name]['name'];
     $uploadfile = $path.$old_name;
 
-    if(@move_uploaded_file($_FILES[$name]['tmp_name'], $path.$old_name)){
+    if(@move_uploaded_file($_FILES[$name]['tmp_name'], $path.$new_name)){
         $_SESSION['file'][] = $old_name;
+//        $_SESSION['file'][] = $_FILES[$name];
+        $_SESSION['alias'][] = $new_name;
         return true;
     }
     return false;

@@ -315,10 +315,6 @@
                         </div>
                     </div>
                 </div>
-                <?php
-                if (isset($_SESSION['file'])){
-                    debug($_SESSION['file']);
-                }?>
                 <?=$content;?>
             </div>
         </div>

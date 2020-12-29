@@ -30,6 +30,7 @@
                                 messagefiles.id,
                                 messagefiles.message_id,
                                 messagefiles.name,
+                                messagefiles.alias,
                                 messagefiles.created
                                 FROM messagefiles
                                 WHERE message_id = ?", [$message['id']]);
@@ -37,7 +38,7 @@
                         <?php if (isset($message_files)){
                             echo "<hr><h6><b>Приложенные файлы</b></h6>";
                         foreach($message_files as $message_file):?>
-                        <div class="card-text"><p><a href="<?=PATH?>/uploads/<?=$message_file['name'];?>"><?=
+                        <div class="card-text"><p><a href="<?=PATH?>/uploads/<?=$message_file['alias'];?>"><?=
                                     $message_file['name']; ?></a></p></div>
                         <?php endforeach;}?>
                         <hr>
