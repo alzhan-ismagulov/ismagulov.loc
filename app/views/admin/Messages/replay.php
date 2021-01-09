@@ -13,7 +13,6 @@
         </div><!-- /.col -->
     </div><!-- /.row -->
 </div><!-- /.container-fluid -->
-
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
@@ -25,40 +24,29 @@
                         ?>/messages/add">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <?php
-//                                    if (isset($_SESSION['reciever'])){
-//                                    $reciever = $_SESSION['reciever'];
-//                                    unset($_SESSION['reciever']);
-//                                    $reciever = R::findOne('users', 'users.id = ?', [$reciever]);
-//                                        echo "<input type='text' id='reciever' name = 'reciever' value='{$reciever['id']}' hidden></input>";
-//                                    } else {
-                                    $users = R::getAll("SELECT
-                                    users.id,
-                                    users.name
-                                    FROM users
-                                    ORDER BY users.name
-                                    ASC");
-                                    ?>
-                                    <select name="reciever" id="reciever" class="form-control">
-                                        <?php foreach ($users as $user):?>
-                                        <option value="<?=$user['id'];?>" class="col-md-12"><?=$user['name'];
-                                        ?></option>
-                                        <?php endforeach;?>
-                                    </select>
-<!--                                    --><?//}?>
+<!--                                    <input type="text" name="parent" id="parent" value="--><?//=$_GET['message_id'];?><!--" hidden>-->
+                                    <?php if (isset($_GET['message_id'])){
+                                        $_SESSION['message_id'] = $_GET['message_id'];
+                                    } ?>
+                                    <input type="text" name="reciever" id="reciever" class="form-control"
+                                           value="<?=$parent_message['sender'];?>" hidden>
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <textarea type="text" name="text" id="editor"
-                                              class="form-control">Введите текст сообщения</textarea>
-<!--                                    <script>-->
-<!--                                        ClassicEditor-->
-<!--                                            .create( document.querySelector( '#editor' ) )-->
-<!--                                            .catch( error => {-->
-<!--                                                console.error( error );-->
-<!--                                            } );-->
-<!--                                    </script>-->
+                                              class="form-control">
+                                        <br /><hr>
+                                        <h6>Предыдущее сообщение:</h6>
+                                        <span><?=$parent_message['text'];?></span>
+                                        </textarea>
+                                    <script>
+                                        ClassicEditor
+                                            .create( document.querySelector( '#editor' ) )
+                                            .catch( error => {
+                                                console.error( error );
+                                            } );
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -69,7 +57,7 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <button type="submit" id="submit" class="btn btn-primary submit">Отправить</button>
+                                    <button type="submit" id="submit" class="btn btn-primary submit">Ответить</button>
                                     <img src="<?=PATH;?>/image/ajax-loader.gif" alt="" class="preloader-img">
                                 </div>
                             </div>

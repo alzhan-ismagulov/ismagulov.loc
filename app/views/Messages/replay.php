@@ -1,18 +1,16 @@
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Создать сообщение</h1>
+            <h1 class="m-0 text-dark">Ответить</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="<?=PATH;?>">Главная</a></li>
                 <li class="breadcrumb-item"><a href="<?=PATH;?>/user">Личный кабинет</a></li>
-                <li class="breadcrumb-item active">Создать сообщение</li>
             </ol>
         </div><!-- /.col -->
     </div><!-- /.row -->
 </div><!-- /.container-fluid -->
-
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
@@ -28,37 +26,30 @@
                               action="<?=PATH;?>/messages/add">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <?php
-                                        $users = R::getAll("SELECT 
-                                        users.id,
-                                        users.name,
-                                        users.role
-                                        FROM users
-                                        WHERE users.role = 'admin'
-                                        ORDER BY users.name
-                                        ASC");
-                                        ?>
-                                        <select name="reciever" id="reciever" class="form-control">
-                                            <?php foreach ($users as $user):?>
-                                                <option value="<?=$user['id'];?>" class="col-md-12"><?=$user['name'];
-                                                    ?></option>
-                                            <?php endforeach;?>
-                                        </select>
+                                    <!--                                    <input type="text" name="parent" id="parent" value="--><?//=$_GET['message_id'];?><!--" hidden>-->
+                                    <?php if (isset($_GET['message_id'])){
+                                        $_SESSION['message_id'] = $_GET['message_id'];
+                                    } ?>
+                                    <input type="text" name="reciever" id="reciever" class="form-control"
+                                           value="<?=$parent_message['sender'];?>" hidden>
                                 </div>
+                            </div>
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <textarea type="text" name="text" id="editor"
-                                              class="form-control"></textarea>
+                                              class="form-control" placeholder="Предыдущее сообщение:">
+                                        <br />
+                                        <u>Предыдущее сообщение:</u>
+                                        <span><?=$parent_message['text'];?></span>
+                                        </textarea>
+                                    <script>
+                                        ClassicEditor
+                                            .create( document.querySelector( '#editor' ) )
+                                            .catch( error => {
+                                                console.error( error );
+                                            } );
+                                    </script>
                                 </div>
-                                <script type="application/javascript">
-                                    ClassicEditor
-                                        .create( document.querySelector( '#editor' ) )
-                                        // .then( editor => {
-                                        //     console.log( editor );
-                                        // } )
-                                        .catch( error => {
-                                            console.error( error );
-                                        } );
-                                </script>
                             </div>
                             <div class="col-sm-12">
                                 <div id="uploadfromuser" class="upload"></div>
@@ -68,8 +59,7 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <button type="submit" id="submit" name="submit" class="btn btn-primary
-                                    submit">Отправить</button>
+                                    <button type="submit" id="submit" class="btn btn-primary submit">Ответить</button>
                                     <img src="<?=PATH;?>/image/ajax-loader.gif" alt="" class="preloader-img">
                                 </div>
                             </div>

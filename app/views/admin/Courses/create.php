@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="card-body pad">
                                                 <div class="mb-3">
-                                                    <textarea name="description" id="editor1" class="textarea"
+                                                    <textarea name="description" id="editor" class="form-control"
                                                               rows="10">
                                                     </textarea>
                                                 </div>

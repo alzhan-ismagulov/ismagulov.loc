@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?=PATH;?>/public/css/upload.css">
     <link rel="stylesheet" href="<?=PATH;?>/public/css/style.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
+<!--    <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>-->
     <link rel="stylesheet" href="<?=PATH;?>/public/css/dropzone.css">
     <link rel="stylesheet" href="<?=PATH;?>/public/css/lesson.css">
     <link rel="stylesheet" href="<?=PATH;?>/adminlte/dist/css/adminlte.min.css">

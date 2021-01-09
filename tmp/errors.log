@@ -20651,3 +20651,221 @@
 =================
 [2020-12-29 03:15:47] Текст ошибки: syntax error, unexpected 'public' (T_PUBLIC), expecting end of file | Файл: C:\OSPanel\domains\ismagulova.loc\app\controllers\admin\MessagesController.php | Строка: 47
 =================
+[2020-12-31 02:41:35] Текст ошибки: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-31 02:42:00] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.parent,
+                        messages.sender,
+                        mess' at line 2 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-31 02:51:16] Текст ошибки: Expected array, string given. | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Finder.php | Строка: 194
+=================
+[2020-12-31 02:54:04] Текст ошибки: syntax error, unexpected ';', expecting ',' or ')' | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\admin\Messages\replay.php | Строка: 59
+=================
+[2020-12-31 02:54:16] Текст ошибки: syntax error, unexpected ';', expecting ',' or ')' | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\admin\Messages\replay.php | Строка: 59
+=================
+[2020-12-31 02:54:23] Текст ошибки: Expected array, NULL given. | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Finder.php | Строка: 194
+=================
+[2020-12-31 02:54:35] Текст ошибки: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-31 02:56:29] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON messages.sender = users.id
+                        WHERE messages.id = 112' at line 12 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2020-12-31 02:58:45] Текст ошибки: syntax error, unexpected '?>' | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\admin\Messages\replay.php | Строка: 53
+=================
+[2021-01-01 19:24:01] Текст ошибки: syntax error, unexpected 'public' (T_PUBLIC) | Файл: C:\OSPanel\domains\ismagulova.loc\app\controllers\admin\MessagesController.php | Строка: 45
+=================
+[2021-01-03 03:27:34] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-03 03:27:35] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-03 03:30:36] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'reciever' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-03 03:31:28] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'reciever' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-03 03:37:41] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'reciever' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-03 03:41:31] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'reciever' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-03 03:47:52] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'reciever' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-03 03:55:38] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'reciever' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-03 03:56:41] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'reciever' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-03 03:57:39] Текст ошибки: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'Alzhan' for column 'reciever' at row 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-03 04:00:05] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//                        ON messages.sender = users.id
+                       ' at line 13 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-03 14:01:26] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-03 14:06:05] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 18:16:49] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 18:44:06] Текст ошибки: syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\admin\Messages\replay.php | Строка: 69
+=================
+[2021-01-07 19:33:03] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:33:25] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:35:23] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:35:23] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:35:38] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:35:39] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:35:48] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:35:49] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:35:51] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:35:52] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:37:06] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:37:12] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:37:13] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:37:28] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:37:28] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:37:31] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:37:31] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:37:56] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:37:56] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:39:08] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:39:09] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:39:12] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:39:13] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:39:33] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:39:33] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:40:13] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:40:14] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:45:53] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:45:54] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:46:19] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:46:19] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:46:22] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 19:46:22] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 20:01:27] Текст ошибки: Метод app\controllers\MessagesController::replayAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-07 20:14:00] Текст ошибки: Контроллер app\controllers\MessagesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-07 20:14:32] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 20:14:32] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 20:14:42] Текст ошибки: Контроллер app\controllers\MessagesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-07 20:18:06] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE users.role = 'admin'                                    
+                ' at line 6 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-07 20:18:55] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE users.role = 'admin'                                    
+                ' at line 7 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-07 20:18:57] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE users.role = 'admin'                                    
+                ' at line 7 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-07 20:21:29] Текст ошибки: syntax error, unexpected '}', expecting end of file | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\Messages\add.php | Строка: 43
+=================
+[2021-01-07 20:35:57] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 20:35:59] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 20:38:24] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-07 20:38:26] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 00:28:19] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 00:31:53] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 00:32:19] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 17:51:01] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 17:51:02] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 17:52:29] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 17:52:30] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 17:55:33] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 17:55:34] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 18:04:23] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 18:04:24] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 18:07:27] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 18:09:00] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 18:22:34] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 18:22:34] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 19:05:25] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 19:47:23] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 19:47:23] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-08 19:47:24] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 00:27:47] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 00:27:47] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 00:32:43] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 00:32:44] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 00:41:14] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 16:53:33] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 17:00:22] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 17:00:22] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 17:01:22] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 17:01:22] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 17:03:12] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 17:03:38] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 17:03:38] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 17:22:54] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND messages.visible = '1'
+        LIMIT 0, 10' at line 13 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-09 17:26:04] Текст ошибки: OODB Store requires a bean, got: string | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\OODB.php | Строка: 119
+=================

@@ -24,7 +24,22 @@
                         <div class="card-subtitle col-md-12 text-muted"><h6>Дата отправления:
                                 <?=$message['created'];?></h6></div>
                         <hr>
-                        <div class="card-text"><p><?=$message['text'];?></p></div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                    <textarea type="text" name="text" id="editor"
+                                              class="form-control" disabled="disabled"><?=$message['text'];?></textarea>
+                            </div>
+                            <script type="application/javascript">
+                                ClassicEditor
+                                    .create( document.querySelector( '#editor' ) )
+                                    // .then( editor => {
+                                    //     console.log( editor );
+                                    // } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
+                        </div>
                         <?php
                             $message_files = R::getAll("SELECT 
                                 messagefiles.id,

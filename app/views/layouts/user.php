@@ -6,13 +6,15 @@
     <?=$this->getMeta();?>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?=PATH;?>/adminlte/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?=PATH;?>/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=PATH;?>/public/css/upload.css">
+    <link rel="stylesheet" href="<?=PATH;?>/public/css/style.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
+    <!--    <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>-->
+    <link rel="stylesheet" href="<?=PATH;?>/public/css/dropzone.css">
+    <link rel="stylesheet" href="<?=PATH;?>/public/css/lesson.css">
     <link rel="stylesheet" href="<?=PATH;?>/adminlte/dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="<?=PATH;?>/css/style.css">
-    <link rel="stylesheet" href="<?=PATH;?>/css/lesson.css">
+    <link rel="stylesheet" href="<?=PATH;?>/adminlte/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?=PATH;?>/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="<?=PATH;?>/adminlte/plugins/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="<?=PATH;?>/adminlte/plugins/summernote/summernote-bs4.css">
@@ -116,11 +118,11 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="<?=PATH;?>/user" class="brand-link">
             <img src="<?=PATH;?>/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image
             img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">Панель управления</span>
+            <span class="brand-text font-weight-light">Личный кабинет</span>
         </a>
 
         <!-- Sidebar -->
@@ -211,17 +213,16 @@
         adminpath = '<?=ADMIN;?>';
 </script>
 
-<!--<script src="--><?//=PATH;?><!--/public/js/jquery-3.5.1.min.js"></script>-->
 <script src="<?=PATH;?>/public/js/jquery-3.5.1.js"></script>
 <script src="<?=PATH;?>/adminlte/dist/js/adminlte.js"></script>
-<script src="<?=PATH;?>/adminlte/bower_components/ckeditor/ckeditor.js"></script>
-<script src="/public/js/main.js"></script>
-<script src="/public/js/upload_message.js"></script>
-<script src="/public/js/ajaxupload.js"></script>
-<script src="/public/js/my.js"></script>
-<script src="/public/js/bootstrap.js"></script>
-<script src="/public/js/core.js"></script>
-<script src="/public/js/upload.js"></script>
+<script src="<?=PATH;?>/public/js/dropzone.js"></script>
+<script src="<?=PATH;?>/public/js/main.js"></script>
+<!--<script src="--><?//=PATH;?><!--/public/js/mainforuser.js"></script>-->
+<!--<script src="/public/js/ajaxupload.js"></script>-->
+<!--<script src="/public/js/my.js"></script>-->
+<script src="<?=PATH;?>/public/js/bootstrap.js"></script>
+<script src="<?=PATH;?>/public/js/core.js"></script>
+<script src="<?=PATH;?>/public/js/upload.js"></script>
 
 <script type="application/javascript">
     $().alert('close');
@@ -236,6 +237,5 @@
         element.appendChild( anchor );
     } );
 </script>
-<!--/CKEditor Media Embed-->
 </body>
 </html>

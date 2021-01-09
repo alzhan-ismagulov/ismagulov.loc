@@ -44,8 +44,18 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <textarea type="text" name="text" id="editor"
-                                              class="form-control">Введите текст сообщения</textarea>
+                                              class="form-control"></textarea>
                                 </div>
+                                <script type="application/javascript">
+                                    ClassicEditor
+                                        .create( document.querySelector( '#editor' ) )
+                                        // .then( editor => {
+                                        //     console.log( editor );
+                                        // } )
+                                        .catch( error => {
+                                            console.error( error );
+                                        } );
+                                </script>
                             </div>
                             <div class="col-sm-12">
                                 <div id="upload" class="upload"></div>
@@ -55,7 +65,8 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <button type="submit" id="submit" class="btn btn-primary submit">Отправить</button>
+                                    <button type="submit" id="submit2" class="btn btn-primary
+                                    submit2">Отправить</button>
                                     <img src="<?=PATH;?>/image/ajax-loader.gif" alt="" class="preloader-img">
                                 </div>
                             </div>

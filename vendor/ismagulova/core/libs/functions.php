@@ -3,7 +3,6 @@ function debug($arr, $die = false){
     echo '<pre>' . print_r($arr, true) . '</pre>';
     if($die) die;
 }
-
 //    Дерево в HTML
 function comments_to_string($comments){
     foreach ($data as $item){
@@ -66,10 +65,11 @@ function mapTree($dataset){
     }
     return $tree;
 }
+
 function restrictArea(){
     if (!isset($_SESSION['user'])){
         $_SESSION['error'] = 'Вам нужно войти в систему';
-        redirect('/signin');
+        redirect(PATH . '/signin');
     }
 }
 
@@ -79,7 +79,7 @@ function restrictUser(){
     }
     if ($_SESSION['user']['role'] == 'user'){
         $_SESSION['error'] = 'Вы не администратор';
-        redirect('/user');
+        redirect(PATH . '/user');
     }
 }
 
@@ -109,7 +109,6 @@ function uploadFile($name, $path){
 
     if(@move_uploaded_file($_FILES[$name]['tmp_name'], $path.$new_name)){
         $_SESSION['file'][] = $old_name;
-//        $_SESSION['file'][] = $_FILES[$name];
         $_SESSION['alias'][] = $new_name;
         return true;
     }

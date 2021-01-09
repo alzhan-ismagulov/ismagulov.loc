@@ -11,68 +11,43 @@ class MessagesController extends AppController
     public function addAction()
     {
         restrictArea();
-
         if (!empty($_POST)) {
             $messages = \R::dispense('messages');
-            $messages->sender = $_SESSION['user']['id'];
-            $messages->reciever = $_POST['reciever'];
-            $messages->email = $_SESSION['user']['email'];
-            $messages->text = $_POST['text'];
-            if (!$_FILES['userfile']['name']){
-                $messages->files = NULL;
-                if ($messages = \R::store($messages)){
-                    $_SESSION['success'] = 'Сообщение добавлено';
-                    unset($_SESSION['reciever']);
-                    unset($_SESSION['sender']);
-                    redirect(PATH . '/messages/outbox');
-                }
-            } else {
-//                $ext = strtolower(preg_replace("#.+\.([a-z]+)$#i", "$1", $_FILES['userfile']['name']));
-                $types = array(
-                    "image/gif",
-                    "image/png",
-                    "image/jpeg",
-                    "image/pjpeg",
-                    "image/x-png",
-                    "text/plain",
-                    "application/pdf",
-                    "application/msword",
-                    "application/vnd.ms-excel",
-                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-                );
-                if ($_FILES
-                    ['userfile']['size'] > 10737418) {
-                    $_SESSION['error'] = "Ошибка. максимальный размер файла 1Мб!";
-                    redirect();
-                }
-                if ($_FILES['userfile']['error']) {
-                    $_SESSION['error'] = "Ошибка. Добавьте файл";
-                    redirect();
-                }
-                if (!in_array($_FILES['userfile']['type'], $types)) {
-                    $_SESSION['error'] = "Допустимые расширения - .gif, .jpg, .png, .pdf, .doc, .docx, .xls, .xlsx, .pptx, .txt";
-                    redirect();
-                }
-                $uploaddir = WWW . '/uploads/';
-                $new_name = $_FILES['userfile']['name'];
-                $uploadfile = $uploaddir . $new_name;
-                $messages->files = $new_name;
+            if (isset($_SESSION['message_id'])){
+                $messages->parent = $_SESSION['message_id'];
+            } else{
+                $messages->parent = '0';
             }
-            move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile);
-            if ($messages = \R::store($messages)){
-                $_SESSION['success'] = 'Сообщение добавлено';
-                unset($_SESSION['reciever']);
-                unset($_SESSION['sender']);
+            $messages->sender = h($_SESSION['user']['id']);
+            $messages->reciever = h($_POST['reciever']);
+            $messages->email = h($_SESSION['user']['email']);
+            $messages->text = h($_POST['text']);
+            if(\R::store($messages)) {
+                unset($_SESSION['message_id']);
+                if (isset($_SESSION['file'])){
+                    $files = $_SESSION['file'];
+                    $alias = $_SESSION['alias'];
+                    for ($index = 0 ; $index < count($files); $index ++) {
+                        $message_id = $messages->id;
+                        $messagefiles = \R::dispense('messagefiles');
+                        $messagefiles->message_id = $message_id;
+                        $messagefiles->name = $files[$index];
+                        $messagefiles->alias = $alias[$index];
+                        \R::store($messagefiles);
+                        unset($_SESSION['file']);
+                        unset($_SESSION['alias']);
+                    }
+                }
+                $_SESSION['success'] = 'Сообщение отправлено';
+                $res = ['answer' => 'success', 'message' => 'Message upload'];
                 redirect(PATH . '/messages/outbox');
+            } else {
+                $_SESSION['error'] = 'Сообщение не отправлено';
+                $res = ['answer' => 'error'];
             }
+            exit(json_encode($res));
         }
-    }
-
-    public function indexAction()
-    {
-        
+        $this->setMeta("Добавить сообщение");
     }
 
     public function inboxAction()
@@ -92,19 +67,17 @@ class MessagesController extends AppController
         messages.text, 
         messages.created, 
         messages.reading,
+        messages.visible,
         users.name
-        FROM
-        messages
-        JOIN users
+        FROM messages JOIN users
         ON messages.sender = users.id
-        WHERE messages.reciever = $user_id
+        WHERE messages.reciever = $user_id AND messages.visible = '1'
         LIMIT $start, $perpage 
         ");
 
         $this->set(compact('messages', 'pagination'));
-        $this->setMeta('Список сообщений');
+        $this->setMeta('Входящие сообщения');
     }
-
     public function outboxAction()
     {
         restrictArea();
@@ -122,17 +95,17 @@ class MessagesController extends AppController
         messages.text, 
         messages.created, 
         messages.reading,
+        messages.visible,
         users.name
         FROM messages JOIN users
         ON messages.reciever = users.id
-        WHERE messages.sender = $user_id
+        WHERE messages.sender = $user_id AND messages.visible = '1'
         LIMIT $start, $perpage 
         ");
 
         $this->set(compact('messages', 'pagination'));
-        $this->setMeta('Список сообщений');
+        $this->setMeta('Отправленные сообщения');
     }
-
     public function viewAction()
     {
         restrictArea();
@@ -140,18 +113,23 @@ class MessagesController extends AppController
             $message_id = $_GET['id'];
             $message = \R::getRow("SELECT
                 messages.id,
-                messages.sender,
-                messages.reciever = users.name,
+                messages.sender = users.name,
+                messages.reciever,
                 messages.email,
                 messages.text,
                 messages.created,
                 messages.reading,
+                messages.visible,
                 users.name
                 FROM messages JOIN users
-                ON messages.reciever = users.id 
-                WHERE messages.id = $message_id
+                ON messages.sender = users.id 
+                WHERE messages.id = $message_id AND messages.visible = '1'
                 LIMIT 1                
                 ");
+            if (!$message){
+                $_SESSION['error'] = "Такого сообщения не существует";
+                redirect(PATH . '/messages/inbox');
+            }
         } else {
             $_SESSION['error'] = 'Сообщение не выбрано';
             redirect('');
@@ -171,28 +149,124 @@ class MessagesController extends AppController
 
         if (isset($_GET['id'])){
             $message_id = $_GET['id'];
+            $_SESSION['message_id'] = $message_id;
             $messages = \R::exec("UPDATE messages SET messages.reading = '1' WHERE messages.id = ?", [$message_id]);
         }
         $this->set(compact('message','messages'));
-        $this->setMeta('Просмотр сообщения');
+        $this->setMeta('Cообщение');
     }
-
     public function deleteAction()
     {
         restrictArea();
         $message_id = $this->getRequestID();
         $message = \R::load('messages', $message_id);
-        \R::trash($message);
+        $message->visible = '0';
+        \R::store($message);
+//        \R::trash($message);
+//        $files = \R::getAll("SELECT messagefiles.alias FROM messagefiles WHERE messagefiles.message_id = $message_id");
+//        foreach ($files as $file) {
+//            if (file_exists('uploads/' . $file['alias'])) {
+//                @unlink('uploads/' . $file['alias']);
+//            }
+//        }
+//        \R::exec("DELETE FROM messagefiles WHERE message_id = $message_id");
         $_SESSION['success'] = 'Сообщение удалено';
+        unset($_SESSION['file']);
         redirect('');
     }
-
-    public static function upload()
+    public function deleteFilesAction()
     {
-        if (0 < $_FILES['file']['error']) {
-            echo 'Error: ' . $_FILES['file']['error'] . '<br>';
-        } else {
-            move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/' . $_FILES['file']['name']);
+        if (empty($_POST['file'])) die('file not found');
+
+        session_start();
+        $file = $_POST['file'];
+
+        if (file_exists('uploads/' . $file)) {
+            @unlink('uploads/' . $file);
+
+            if (!empty($_SESSION['files'])) {
+                foreach ($_SESSION['files'] as $k => $v) {
+                    if ($file == $v) {
+                        unset($_SESSION['files'][$k]);
+                    }
+                }
+            }
         }
+    }
+    public function uploadAction()
+    {
+        if(!empty($_FILES)){
+            $path = __DIR__ . '../../../public/uploads/';
+            if(uploadFile('files', $path)){
+                $res = ['answer' => 'success', 'file' => $_FILES['files']['name']];
+                exit(json_encode($res));
+            }else{
+                $res = ['answer' => 'error'];
+                exit(json_encode($res));
+            }
+        }
+    }
+    public function replayAction()
+    {
+        restrictArea();
+        if (!empty($_GET['message_id'])){
+            $parentMessageId = $_GET['message_id'];
+            $parent_message = \R::getRow("
+                SELECT messages.id,
+                        messages.parent,
+                        messages.sender,
+                        messages.reciever,
+                        messages.email,
+                        messages.text,
+                        messages.created,
+                        users.id,
+                        users.name,
+                        users.email
+                        FROM messages
+                        JOIN users
+                        WHERE messages.id = $parentMessageId");
+            $_SESSION['info'] = $parent_message;
+            $this->set(compact('parent_message'));
+        }
+
+        if (!empty($_POST)) {
+            $messages = \R::dispense('messages');
+            if(isset($_GET['message_id'])){
+                $messages->parent = h($_GET['message_id']);
+            } else{
+                $messages->parent = NULL;
+            }
+            $messages->sender = h($_SESSION['user']['id']);
+            $messages->parent = $_GET['message_id'];
+            $messages->reciever = $_POST['reciever'];
+            $messages->email = h($_SESSION['user']['email']);
+            $messages->text = h($_POST['text']);
+            if(\R::store($messages)) {
+                if (isset($_SESSION['file'])){
+                    $files = $_SESSION['file'];
+                    $alias = $_SESSION['alias'];
+                    for ($index = 0 ; $index < count($files); $index ++) {
+                        $message_id = $messages->id;
+                        $messagefiles = \R::dispense('messagefiles');
+                        $messagefiles->message_id = $message_id;
+                        $messagefiles->name = $files[$index];
+                        $messagefiles->alias = $alias[$index];
+                        \R::store($messagefiles);
+                        unset($_SESSION['file']);
+                        unset($_SESSION['alias']);
+                    }
+                }
+                $_SESSION['success'] = 'Ответ отправлен';
+                $res = ['answer' => 'success', 'message' => 'Message upload'];
+                redirect(PATH . '/messages/outbox');
+            } else {
+                $_SESSION['error'] = 'Ответ не отправлен';
+                $res = ['answer' => 'error'];
+            }
+            exit(json_encode($res));
+        }
+        $this->setMeta("Добавить сообщение");
+
+        $this->setMeta('Ответить');
     }
 }
