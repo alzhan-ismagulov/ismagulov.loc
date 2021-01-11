@@ -22,7 +22,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <img class="lesson__img" src="<?=PATH;?>/image/<?=$lesson['image'];?>" alt="">
+                <img class="lesson__img" src="<?=PATH;?>/public/uploads/<?=$lesson['image'];?>" alt="">
             </div>
         </div>
         <div class="row">

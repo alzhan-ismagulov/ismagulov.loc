@@ -33,72 +33,65 @@ class LessonsController extends AppController
         $this->set(compact('lessons', 'pagination', 'count'));
     }
 
-    public function addImageAction()
-    {
-        restrictArea();
-        restrictUser();
-        if (isset($_GET['upload'])) {
-            if ($_POST['name'] == 'single') {
-                $wmax = App::$app->getProperty('img_width');
-                $hmax = App::$app->getProperty('img_height');
-            }
-            $name = $_POST['name'];
-            $lesson = new Lesson();
-            $lesson->uploadImg($name, $wmax, $hmax);
-        }
-    }
-
     public function createAction()
     {
         restrictArea();
         restrictUser();
         if (!empty($_POST)) {
-            $lesson = new Lesson();
-            $data = $_POST;
-            $lesson->created = date("Y-m-d H:i:s");
-            $lesson->modified = date("Y-m-d H:i:s");
-            $lesson->load($data);
-            $lesson->getImg();
-
-            if (!$lesson->validate($data)) {
-                $lesson->getErrors();
-                $_SESSION['form_data'] = $data;
-                redirect();
+            $lesson = \R::dispense('lessons');
+            $lesson->title = $_POST['title'];
+            $lesson->description = $_POST['text'];
+            if (isset($_SESSION['alias'])){
+                $lesson->image = $_SESSION['alias'][0];
+            } else {
+                $lesson->image = NULL;
             }
-
-            if ($id = $lesson->save('lessons')) {
-                $p = \R::load('lessons', $id);
-                \R::store($p);
-                $_SESSION['success'] = 'Урок добавлен';
+            unset($_SESSION['alias']);
+            if (\R::store($lesson)){
+                $_SESSION['success'] = 'Урок создан';
+                redirect(ADMIN.'/lessons');
+            } else {
+                $_SESSION['error'] = 'Урок не создан';
+                redirect(ADMIN.'/lessons');
             }
-            redirect(ADMIN . '/lessons/');
         }
-
         $this->setMeta('Новый урок');
     }
 
     public function editAction()
     {
-        restrictArea();
         restrictUser();
+        restrictArea();
         $lesson = new Lesson();
-        $lesson->getImg();
         $lesson->edit();
         $lesson_id = $_GET['id'];
-        $lesson = \R::getRow("SELECT 
-                        lessons.id,
-                        lessons.title,
-                        lessons.description,
-                        lessons.image,
-                        lessons.created,
-                        lessons.modified,
-                        lessons.status
-                        FROM lessons
-                        WHERE lessons.id = $lesson_id                        
-                                    LIMIT 1");
-        if (!$lesson) {
-            $_SESSION['error'] = 'Такого урока нет нет';
-            redirect(ADMIN . '/lessons/');
+        $lesson = \R::getRow('SELECT
+                                        `lessons`.`id`,
+                                        `lessons`.`title`,
+                                        `lessons`.`description`,
+                                        `lessons`.`image`,
+                                        `lessons`.`created`,
+                                        `lessons`.`modified`,
+                                        `lessons`.`status`
+                                FROM `lessons`
+                                WHERE `lessons`.`id` = ?
+                                LIMIT 1', [$lesson_id]);
+        if (!$lesson){
+            $_SESSION['error'] = 'Такого курса нет';
+            redirect('/');
+        }
+        if (!empty($_POST)) {
+            $lesson_id = $_SESSION['id'];
+            $lesson = \R::findOne('lessons', 'id = ?', [$lesson_id]);
+            $lesson->id = $_SESSION['id'];
+            $lesson->title = $_POST['title'];
+            $lesson->description = $_POST['text'];
+            if (isset($_SESSION['alias'])){
+                $lesson->image = $_SESSION['alias'][0];
+            } else {
+                $lesson->image = NULL;
+            }
+            unset($_SESSION['alias']);
         }
 
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -106,12 +99,34 @@ class LessonsController extends AppController
         $count = \R::count('files');
         $pagination = new Pagination($page, $perpage, $count);
         $start = $pagination->getStart();
-        $files = \R::getAll("SELECT files.id, files.name FROM files LIMIT $start, $perpage");
+        $files = \R::getAll("SELECT files.id, files.name, files.alias FROM files LIMIT $start, $perpage");
 
         $this->setMeta("Редактирование урока");
         $this->set(compact('lesson', 'files', 'pagination'));
     }
 
+//    Удаление файлов
+    public function deleteFilesAction()
+    {
+        if (empty($_POST['file'])) die('file not found');
+
+        session_start();
+        $file = $_POST['file'];
+
+        if (file_exists('uploads/' . $file)) {
+            @unlink('uploads/' . $file);
+
+            if (!empty($_SESSION['files'])) {
+                foreach ($_SESSION['files'] as $k => $v) {
+                    if ($file == $v) {
+                        unset($_SESSION['files'][$k]);
+                    }
+                }
+            }
+        }
+    }
+
+//    Удаление файлов из урока
     public function defileAction()
     {
         $lesson_id = $_GET['lesson_id'];
@@ -120,17 +135,6 @@ class LessonsController extends AppController
             $lesson_id]);
         $_SESSION['success'] = 'Файл из урока удалён';
         redirect('');
-    }
-
-    public function deleteAction()
-    {
-        restrictArea();
-        restrictUser();
-        $lesson_id = $this->getRequestID();
-        $lesson = \R::load('lessons', $lesson_id);
-        \R::trash($lesson);
-        $_SESSION['success'] = 'Урок удален';
-        redirect(ADMIN . '/lessons');
     }
 
     public function viewAction()
@@ -185,13 +189,19 @@ class LessonsController extends AppController
 
     public function uploadAction()
     {
-        restrictArea();
-        restrictUser();
-            $name = $_POST['name'];
-            $lesson = new Lesson();
-            $lesson->upload($name);
+        if(!empty($_FILES)){
+            $path = __DIR__ . '../../../../public/uploads/';
+            if(uploadFile('files', $path)){
+                $res = ['answer' => 'success', 'file' => $_FILES['files']['name']];
+                exit(json_encode($res));
+            }else{
+                $res = ['answer' => 'error'];
+                exit(json_encode($res));
+            }
+        }
     }
 
+//    Добавление файлов в урок в разделе Редактирование урока
     public function addFileAction()
     {
         $lesson_id = $_GET['lesson_id'];
@@ -204,5 +214,24 @@ class LessonsController extends AppController
             $_SESSION['success'] = 'Файл добавлен в урок';
         }
         redirect('');
+    }
+
+//    Удаление урока
+    public function deleteAction()
+    {
+        restrictArea();
+        restrictUser();
+        $lesson_id = $this->getRequestID();
+        $lesson = \R::load('lessons', $lesson_id);
+        $files = \R::getAll("SELECT lessons.image FROM lessons WHERE lessons.id = $lesson_id");
+        foreach ($files as $file) {
+            if (file_exists('uploads/' . $file['image'])) {
+                @unlink('uploads/' . $file['image']);
+            }
+        }
+        \R::trash($lesson);
+        $_SESSION['success'] = 'Урок удален';
+        unset($_SESSION['file']);
+        redirect(ADMIN . '/lessons');
     }
 }

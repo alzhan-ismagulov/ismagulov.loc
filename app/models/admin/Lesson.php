@@ -21,35 +21,19 @@ class Lesson extends \app\models\AppModel
             $lesson_id = $_POST['id'];
             $lesson = \R::findOne('lessons', 'id = ?', [$lesson_id]);
             $lesson->title = $_POST['title'];
-            $lesson->description = $_POST['description'];
-
-            $ext = strtolower(preg_replace("#.+\.([a-z]+)$#i", "$1", $_FILES['userfile']['name'])); // расширение
-                // картинки
-                $types = array("image/gif", "image/png", "image/jpeg", "image/pjpeg", "image/x-png"); // массив допустимых расширений
-                if ($_FILES['userfile']['size'] > 10737418) {
-                    $_SESSION['error'] = "Ошибка. максимальный размер файла 1Мб!";
-                    redirect();
-                }
-                if ($_FILES['userfile']['error']) {
-                    $_SESSION['error'] = "Ошибка. Добавьте фотографию для урока";
-                    redirect();
-                }
-                if (!in_array($_FILES['userfile']['type'], $types)) {
-                    $_SESSION['error'] = "Допустимые расширения - .gif, .jpg, .png";
-                    redirect();
-                }
-                $uploaddir = WWW . '/image/';
-                $new_name = md5(time()) . ".$ext";
-                $uploadfile = $uploaddir . $new_name;
-                $lesson->image = $new_name;
-                move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile);
-
-            if (\R::store($lesson)) {
-                $_SESSION['success'] = 'Ваш урок обновлен!';
-                redirect(ADMIN . '/lessons');
+            $lesson->description = $_POST['text'];
+            if (isset($_SESSION['alias'])){
+                $lesson->image = $_SESSION['alias'][0];
             } else {
-                $_SESSION['error'] = 'Не удалось обновить урок!';
-                redirect('');
+                $lesson->image = NULL;
+            }
+            unset($_SESSION['alias']);
+            if (\R::store($lesson)){
+                $_SESSION['success'] = 'Урок обновлён';
+                redirect(ADMIN.'/lessons');
+            } else {
+                $_SESSION['error'] = 'Урок не обновлён';
+                redirect(ADMIN.'/lessons');
             }
         }
     }

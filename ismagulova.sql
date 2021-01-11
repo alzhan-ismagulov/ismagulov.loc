@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 27 2020 г., 23:13
+-- Время создания: Янв 11 2021 г., 20:44
 -- Версия сервера: 5.7.29
 -- Версия PHP: 7.1.33
 
@@ -44,8 +44,9 @@ CREATE TABLE `courses` (
 
 INSERT INTO `courses` (`id`, `name`, `description`, `price`, `author`, `created`, `begin`, `status`) VALUES
 (1, 'Курс по финансовой грамотности', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 10000, 'Alzhan', '2020-11-02 14:58:15', '2020-11-02 14:58:15', '1'),
-(7, 'Курс по инвестициям', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 40000, 'Alzhan', '2020-11-03 02:02:22', '2020-11-03 02:02:22', '1'),
-(8, 'Финансовые консультации', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 30000, 'Alzhan', '2020-11-30 12:49:49', '2020-11-30 12:49:49', '1');
+(2, 'Курс по инвестициям', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 40000, 'Alzhan', '2020-11-03 02:02:22', '2020-11-03 02:02:22', '1'),
+(3, 'Финансовые консультации', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 30000, 'Alzhan', '2020-11-30 12:49:49', '2020-11-30 12:49:49', '1'),
+(4, 'Working with beans', '&lt;p&gt;RedBeanPHP works with beans. Most interactions with the &lt;strong&gt;database&lt;/strong&gt; are accomplished using beans. Beans are used to carry data from and to the database.&amp;nbsp;&lt;br&gt;&lt;br&gt;Every bean has a &lt;strong&gt;type&lt;/strong&gt; and an &lt;strong&gt;ID&lt;/strong&gt;. The type of a bean tells you which &lt;strong&gt;table&lt;/strong&gt; in the database is used to store the bean. Every type maps to a corresponding table. The ID of a bean is the &lt;strong&gt;primary key&lt;/strong&gt; of the corresponding &lt;strong&gt;record&lt;/strong&gt;.&amp;nbsp;&lt;br&gt;You can create a new bean by dispensing one.&amp;nbsp;&lt;/p&gt;', 12300, 'Alzhan', '2021-01-11 18:34:42', '2021-01-11 18:34:42', '1');
 
 -- --------------------------------------------------------
 
@@ -56,6 +57,7 @@ INSERT INTO `courses` (`id`, `name`, `description`, `price`, `author`, `created`
 CREATE TABLE `files` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -81,7 +83,7 @@ CREATE TABLE `lessons` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0'
@@ -97,6 +99,7 @@ CREATE TABLE `messagefiles` (
   `id` int(10) UNSIGNED NOT NULL,
   `message_id` int(11) DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -108,12 +111,14 @@ CREATE TABLE `messagefiles` (
 
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
+  `parent` int(11) DEFAULT NULL,
   `sender` int(11) NOT NULL,
   `reciever` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `text` text COLLATE utf8mb4_unicode_ci,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `reading` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0'
+  `reading` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `visible` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -262,7 +267,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `files`
@@ -286,13 +291,13 @@ ALTER TABLE `lessons`
 -- AUTO_INCREMENT для таблицы `messagefiles`
 --
 ALTER TABLE `messagefiles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `my_courses`

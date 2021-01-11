@@ -71,7 +71,7 @@
                                   hidden="true"></span>
                         </div>
                         <b class="form-group has-feedback">
-                            <label><h5>Автор петиции: </h5></label>
+                            <label><h5>Автор курса: </h5></label>
                             <?php echo $_SESSION['user']['name'];?>
                         </b>
 <!--                        <div class="col-md-12">-->

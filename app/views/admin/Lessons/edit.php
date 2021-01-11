@@ -51,22 +51,30 @@
                             <label for="text">Введите описание</label>
                             <textarea
                                     rows="10"
-                                    id="editor1"
-                                    name="description"
+                                    id="editor"
+                                    name="text"
                                     class="form-control"
                                     placeholder="Введите описание"><?=$lesson['description'];?></textarea>
+                            <script type="application/javascript">
+                                ClassicEditor
+                                    .create( document.querySelector( '#editor' ) )
+                                    // .then( editor => {
+                                    //     console.log( editor );
+                                    // } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
                             <span class="glyphicon form-control-feedback" aria-
                                   hidden="true"></span>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-4">
-                                <div class="box box-danger box-solid file-upload">
-                                    <div class="box-header">
-                                        <h3 class="box-title">Базовое изображение</h3>
-                                    </div>
-                                        <input type="file" name="userfile">
-                                        <small>Просто добавьте изображение и нажмите редактировать</small>
-                                </div>
+                            <div class="col-sm-12">
+                                <label for="uploadimageforeditlesson">Добавьте изображение для обложки урока</label>
+                                <div id="uploadimageforeditlesson" class="upload"></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="answer"></div>
                             </div>
                         </div>
                         <div class="form-group">

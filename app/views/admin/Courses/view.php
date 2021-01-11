@@ -42,7 +42,20 @@
                                 <th colspan="3">Описание курса</th>
                             </tr>
                             <tr>
-                                <td colspan="3"><?=$course['description'];?></td>
+                                <td colspan="3">
+                                    <textarea type="text" name="text" id="editor"
+                                              class="form-control"><?=$course['description'];?></textarea>
+                                    <script type="application/javascript">
+                                        ClassicEditor
+                                            .create( document.querySelector( '#editor' ) )
+                                            // .then( editor => {
+                                            //     console.log( editor );
+                                            // } )
+                                            .catch( error => {
+                                                console.error( error );
+                                            } );
+                                    </script>
+                                </td>
                             </tr>
                             <tr>
                                 <th colspan="3">Цена</th>
@@ -82,18 +95,6 @@
                                 </td>
                             </tr>
                             <?php endforeach;?>
-<!--                            эталон-->
-<!--                            --><?php
-//                            $lesson_id = $course['lessons'];
-//                            $lesson_id = preg_split("/[\s,]+/", $lesson_id);
-//                            foreach ($lesson_id as $k=>$v):?>
-<!--                                <tr>-->
-<!--                                    <td>--><?//=$k?><!--</td>-->
-<!--                                    <td><a href="--><?//=ADMIN;?><!--/lessons/view?id=--><?//=$v;
-//                                        ?><!--">--><?//=$v;?><!--</a></td>-->
-<!--                                </tr>-->
-<!--                            --><?php //endforeach;?>
-<!--                            /эталон-->
                             </tbody>
                         </table>
                     </div>

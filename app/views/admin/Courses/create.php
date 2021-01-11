@@ -21,50 +21,49 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- general form elements disabled -->
-                <div class="card card-warning">
-                    <!-- /.card-header -->
-                    <div class="card-body">
+                <div class="box">
                         <form action="#" name="create" enctype="multipart/form-data"
                               method="post" role="form" data-toggle="validator">
-                            <div class="row">
+                            <div class="box-body">
                                 <div class="col-sm-12">
-                                    <!-- text input -->
                                     <div class="form-group">
-                                        <label>Название курса</label>
-                                        <input type="text" name="name" id="name" class="form-control"
-                                               placeholder="Название">
+                                        <!-- text input -->
+                                            <label>Название курса</label>
+                                            <input type="text" name="name"
+                                                   id="name"
+                                                   class="form-control"
+                                                   placeholder="Название">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card card-outline card-info">
-                                            <div class="card-header">
-                                                <h3 class="card-title">Описание курса</h3>
-                                            </div>
-                                            <div class="card-body pad">
-                                                <div class="mb-3">
-                                                    <textarea name="description" id="editor" class="form-control"
-                                                              rows="10">
-                                                    </textarea>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="description" id="editor" class="form-control"
+                                                  rows="10">
+                                                        </textarea>
+                                        <script type="application/javascript">
+                                            ClassicEditor
+                                                .create( document.querySelector( '#editor' ) )
+                                                // .then( editor => {
+                                                //     console.log( editor );
+                                                // } )
+                                                .catch( error => {
+                                                    console.error( error );
+                                                } );
+                                        </script>
                                     </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <!-- text input -->
+                                </div>
+                                <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Цена курса</label>
                                         <input type="text" name="price" id="price" class="form-control"
                                                placeholder="Введите цену">
                                     </div>
                                 </div>
-                            </div>
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Создать курс</button>
+                                <div class="col-sm-12">
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary">Создать курс</button>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>

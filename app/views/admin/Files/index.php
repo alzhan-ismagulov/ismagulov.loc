@@ -18,11 +18,30 @@
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <form action="<?=ADMIN;?>/files/upload" enctype="multipart/form-data" method="post">
-                <input type="file" name="file[]" multiple>
-                <input type="submit" value="Отправить">
-            <small>Можете выбрать несколько файлов за один раз</small>
+<!--            ********************************-->
+            <form enctype="multipart/form-data" method="post" id="form3" role="form"
+                  action="<?=ADMIN;?>/files/add">
+                <div class="col-sm-12">
+                    <div id="upload3" class="upload"></div>
+                </div>
+                <div class="col-sm-12">
+                    <div id="answer"></div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <button type="submit" id="submit" class="btn btn-primary submit">Отправить</button>
+<!--                        <img src="css/ajax-loader.gif " alt="" class="preloader-img">-->
+                    </div>
+                </div>
+
             </form>
+<!--            ********************************-->
+
+<!--            <form action="--><?//=ADMIN;?><!--/files/upload" enctype="multipart/form-data" method="post">-->
+<!--                <input type="file" name="file[]" multiple>-->
+<!--                <input type="submit" value="Отправить">-->
+<!--            <small>Можете выбрать несколько файлов за один раз</small>-->
+<!--            </form>-->
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -41,7 +60,7 @@
                             <?php foreach ($files as $file):?>
                             <tr>
                                 <td><?=$file['id'];?></td>
-                                <td><a href="<?=PATH;?>/uploads/<?=$file['name'];?>"><?=$file['name'];?></a></td>
+                                <td><a href="<?=PATH;?>/uploads/<?=$file['alias'];?>"><?=$file['name'];?></a></td>
                                 <td><?=$file['created'];?></td>
                                 <td><a href="<?=ADMIN;?>/files/delete?id=<?=$file['id'];?>" class="btn
                                         btn-danger btn-xs">Удалить</a></td>

@@ -20869,3 +20869,215 @@
 =================
 [2021-01-09 17:26:04] Текст ошибки: OODB Store requires a bean, got: string | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\OODB.php | Строка: 119
 =================
+[2021-01-09 18:31:26] Текст ошибки: SQLSTATE[HY000]: General error: 1364 Field 'sender' doesn't have a default value | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-09 19:23:13] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-09 19:25:53] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/upload.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-09 19:29:05] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Messages/delete-files.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-09 19:29:07] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Messages/delete-files.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-09 20:43:06] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/upload.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-09 20:44:55] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/upload.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 14:30:26] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/upload.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 14:31:21] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/upload.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 14:34:15] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfile.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 14:35:46] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfile.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 14:40:23] Текст ошибки: Контроллер app\controllers\FilesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-10 14:40:25] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfile.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 14:40:54] Текст ошибки: Контроллер app\controllers\FilesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-10 14:40:56] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/upload.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 14:46:29] Текст ошибки: Контроллер app\controllers\FilesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-10 14:46:29] Текст ошибки: Контроллер app\controllers\FilesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-10 14:52:08] Текст ошибки: Контроллер app\controllers\FilesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-10 14:54:00] Текст ошибки: Контроллер app\controllers\FilesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-10 14:57:13] Текст ошибки: Контроллер app\controllers\FilesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-10 14:58:24] Текст ошибки: Контроллер app\controllers\FilesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-10 15:05:12] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfile.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 15:05:12] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfile.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 15:08:10] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfile.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 15:08:10] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfile.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 15:09:08] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfile.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 15:11:30] Текст ошибки: Метод app\controllers\admin\FilesController::addfilesAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-10 15:12:29] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 15:13:38] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 15:16:44] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 15:16:44] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 15:18:55] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 17:20:28] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-10 17:20:36] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-10 17:21:11] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-10 17:21:12] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-10 17:22:26] Текст ошибки: syntax error, unexpected '}', expecting end of file | Файл: C:\OSPanel\domains\ismagulova.loc\app\controllers\admin\FilesController.php | Строка: 56
+=================
+[2021-01-10 17:23:09] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-10 17:23:12] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-10 17:24:07] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-10 17:24:09] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-10 17:25:57] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 17:27:58] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 17:28:58] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 17:45:06] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 18:59:57] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 19:00:52] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 19:01:44] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 19:01:46] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 19:01:59] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 19:10:03] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-10 19:11:59] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-11 00:00:41] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-11 00:01:56] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 00:02:54] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 00:02:54] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 00:03:56] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-11 00:05:42] Текст ошибки: syntax error, unexpected ';', expecting ']' | Файл: C:\OSPanel\domains\ismagulova.loc\app\controllers\admin\FilesController.php | Строка: 37
+=================
+[2021-01-11 00:07:15] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/addfiles.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-11 02:36:09] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/add.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-11 02:37:15] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/add.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-11 02:39:18] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/add.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-11 02:39:49] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/add.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-11 02:47:21] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/admin\Files/add.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-11 03:49:25] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-11 14:17:34] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 14:17:35] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 14:17:35] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 14:38:29] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 15:07:50] Текст ошибки: OODB Store requires a bean, got: object | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\OODB.php | Строка: 119
+=================
+[2021-01-11 15:08:55] Текст ошибки: OODB Store requires a bean, got: object | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\OODB.php | Строка: 119
+=================
+[2021-01-11 15:24:45] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 15:29:45] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 15:55:27] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 15:55:28] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 15:58:46] Текст ошибки: Метод app\controllers\admin\LessonsController::addFileAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-11 17:38:04] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'image' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-11 18:09:30] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 11 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-11 18:10:49] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 11 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-11 18:14:56] Текст ошибки: OODB Store requires a bean, got: object | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\OODB.php | Строка: 119
+=================
+[2021-01-11 18:24:35] Текст ошибки: OODB Store requires a bean, got: object | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\OODB.php | Строка: 119
+=================
+[2021-01-11 18:55:22] Текст ошибки: Cannot use object of type stdClass as array | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\admin\Lessons\edit.php | Строка: 34
+=================
+[2021-01-11 18:56:17] Текст ошибки: Cannot use object of type stdClass as array | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\admin\Lessons\edit.php | Строка: 34
+=================
+[2021-01-11 18:57:49] Текст ошибки: Cannot use object of type stdClass as array | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\admin\Lessons\edit.php | Строка: 34
+=================
+[2021-01-11 18:59:11] Текст ошибки: Cannot use object of type stdClass as array | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\admin\Lessons\edit.php | Строка: 34
+=================
+[2021-01-11 19:12:51] Текст ошибки: Cannot use object of type stdClass as array | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\admin\Lessons\edit.php | Строка: 34
+=================
+[2021-01-11 19:14:34] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 11 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-11 19:25:36] Текст ошибки: Call to a member function edit() on null | Файл: C:\OSPanel\domains\ismagulova.loc\app\controllers\admin\LessonsController.php | Строка: 66
+=================
+[2021-01-11 19:32:43] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 19:32:43] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 19:35:07] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 19:36:47] Текст ошибки: Метод app\controllers\admin\LessonsController::defileAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-11 19:49:30] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ismagulova.filessson' doesn't exist | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-11 20:03:47] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'alias' cannot be null | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-11 20:05:19] Текст ошибки: Метод app\controllers\admin\LessonsController::addFileAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-11 20:08:01] Текст ошибки: Метод app\controllers\admin\FilesController::deleteFilesAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-11 20:08:03] Текст ошибки: Метод app\controllers\admin\FilesController::deleteFilesAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-11 20:08:04] Текст ошибки: Метод app\controllers\admin\FilesController::deleteFilesAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-11 20:08:25] Текст ошибки: Метод app\controllers\admin\FilesController::deleteFilesAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-11 20:08:36] Текст ошибки: Метод app\controllers\admin\FilesController::deleteFilesAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-11 20:08:37] Текст ошибки: Метод app\controllers\admin\FilesController::deleteFilesAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-11 20:32:39] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 20:32:39] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 20:34:50] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 20:34:51] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-11 20:40:37] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================

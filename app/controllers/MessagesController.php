@@ -162,14 +162,6 @@ class MessagesController extends AppController
         $message = \R::load('messages', $message_id);
         $message->visible = '0';
         \R::store($message);
-//        \R::trash($message);
-//        $files = \R::getAll("SELECT messagefiles.alias FROM messagefiles WHERE messagefiles.message_id = $message_id");
-//        foreach ($files as $file) {
-//            if (file_exists('uploads/' . $file['alias'])) {
-//                @unlink('uploads/' . $file['alias']);
-//            }
-//        }
-//        \R::exec("DELETE FROM messagefiles WHERE message_id = $message_id");
         $_SESSION['success'] = 'Сообщение удалено';
         unset($_SESSION['file']);
         redirect('');
