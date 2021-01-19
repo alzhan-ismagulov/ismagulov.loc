@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 11 2021 г., 20:44
+-- Время создания: Янв 19 2021 г., 19:33
 -- Версия сервера: 5.7.29
 -- Версия PHP: 7.1.33
 
@@ -45,8 +45,33 @@ CREATE TABLE `courses` (
 INSERT INTO `courses` (`id`, `name`, `description`, `price`, `author`, `created`, `begin`, `status`) VALUES
 (1, 'Курс по финансовой грамотности', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 10000, 'Alzhan', '2020-11-02 14:58:15', '2020-11-02 14:58:15', '1'),
 (2, 'Курс по инвестициям', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 40000, 'Alzhan', '2020-11-03 02:02:22', '2020-11-03 02:02:22', '1'),
-(3, 'Финансовые консультации', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 30000, 'Alzhan', '2020-11-30 12:49:49', '2020-11-30 12:49:49', '1'),
-(4, 'Working with beans', '&lt;p&gt;RedBeanPHP works with beans. Most interactions with the &lt;strong&gt;database&lt;/strong&gt; are accomplished using beans. Beans are used to carry data from and to the database.&amp;nbsp;&lt;br&gt;&lt;br&gt;Every bean has a &lt;strong&gt;type&lt;/strong&gt; and an &lt;strong&gt;ID&lt;/strong&gt;. The type of a bean tells you which &lt;strong&gt;table&lt;/strong&gt; in the database is used to store the bean. Every type maps to a corresponding table. The ID of a bean is the &lt;strong&gt;primary key&lt;/strong&gt; of the corresponding &lt;strong&gt;record&lt;/strong&gt;.&amp;nbsp;&lt;br&gt;You can create a new bean by dispensing one.&amp;nbsp;&lt;/p&gt;', 12300, 'Alzhan', '2021-01-11 18:34:42', '2021-01-11 18:34:42', '1');
+(3, 'Финансовые консультации', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 30000, 'Alzhan', '2020-11-30 12:49:49', '2020-11-30 12:49:49', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `currency`
+--
+
+CREATE TABLE `currency` (
+  `id` int(11) NOT NULL,
+  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `code` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `symbol_left` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `symbol_right` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` float(15,6) UNSIGNED NOT NULL,
+  `base` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `currency`
+--
+
+INSERT INTO `currency` (`id`, `title`, `code`, `symbol_left`, `symbol_right`, `value`, `base`) VALUES
+(3, 'Тенге', 'KZT', '₸', '', 1.000000, '1'),
+(4, 'Доллар', 'USD', '$', '', 0.002400, '0'),
+(5, 'Евро', 'EUR', '€', '', 0.002000, '0'),
+(6, 'Рубль', 'RUR', '₽', '', 0.170000, '0');
 
 -- --------------------------------------------------------
 
@@ -89,6 +114,13 @@ CREATE TABLE `lessons` (
   `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `lessons`
+--
+
+INSERT INTO `lessons` (`id`, `title`, `description`, `image`, `created`, `modified`, `status`) VALUES
+(2, 'Троянский Cov: ученые объяснили феномен повторного заражения', '<p>Они выдвинули гипотезу, что&nbsp;коронавирус «прячется» во&nbsp;внеклеточных пузырьках, а&nbsp;затем выходит наружу.</p><h3>Затаившееся зло</h3><p>Согласно рекомендациям <a href=\"https://news.mail.ru/company/voz/\">ВОЗ</a>, пациента после перенесенного COVID-19 можно выписать из&nbsp;больницы после двух последовательных отрицательных результатов ПЦР. Анализы нужно проводить с&nbsp;разницей во&nbsp;времени не&nbsp;меньше суток.</p>', 'db6851a2b511434d6674505ad4aea03619cd0ee7.jpg', '2021-01-15 01:01:28', '2021-01-15 01:01:28', '0');
+
 -- --------------------------------------------------------
 
 --
@@ -120,6 +152,13 @@ CREATE TABLE `messages` (
   `reading` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `visible` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `messages`
+--
+
+INSERT INTO `messages` (`id`, `parent`, `sender`, `reciever`, `email`, `text`, `created`, `reading`, `visible`) VALUES
+(7, 1, 35, 35, 'alzhan_ismagulov@list.ru', '<p><strong>Троянский Cov: ученые объяснили феномен повторного заражения</strong></p>', '2021-01-15 01:15:20', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -203,6 +242,12 @@ ALTER TABLE `courses`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `currency`
+--
+ALTER TABLE `currency`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `files`
 --
 ALTER TABLE `files`
@@ -270,6 +315,12 @@ ALTER TABLE `courses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT для таблицы `currency`
+--
+ALTER TABLE `currency`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT для таблицы `files`
 --
 ALTER TABLE `files`
@@ -285,19 +336,19 @@ ALTER TABLE `filesson`
 -- AUTO_INCREMENT для таблицы `lessons`
 --
 ALTER TABLE `lessons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `messagefiles`
 --
 ALTER TABLE `messagefiles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `my_courses`
