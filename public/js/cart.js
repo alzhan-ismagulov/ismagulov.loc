@@ -23,6 +23,11 @@ function showCart(cart) {
     }
     $('#cart .modal-body').html(cart);
     $('#cart').modal();
+    if ($('.cart-sum').text()){
+        $('.cartModal').html($('#cart .cart-sum')).text();
+    } else {
+        $('.cartModal').text('');
+    }
 }
 
 function getCart() {

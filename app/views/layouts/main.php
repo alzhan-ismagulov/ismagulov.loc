@@ -49,7 +49,7 @@
                                 <?}?>
                             </li>
                             <li><a href="cart/show" onclick="getCart(); return false"><i class="fas
-                            fa-shopping-cart"></i></a></li>
+                            fa-shopping-cart"></i> </a></li>
                         </ul>
                     </div>
                 </div>
