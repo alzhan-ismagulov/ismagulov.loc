@@ -12,10 +12,13 @@
             <tbody>
             <?php foreach ($_SESSION['cart'] as $id => $item):?>
             <tr>
-                <td><a href="#"><?=$item['title'];?></a></td>
+                <td><a href="courses/view?id=<?=$item['id'];?>"><?=$item['title'];?></a></td>
                 <td><?=$item['qty'];?></td>
                 <td><?=$item['price'];?></td>
-                <td><a href="#"><i class="far fa-times-circle del-item" style="color: red"></i></a></td>
+                <td><a href="cart/delete?id=<?=$item['id'];?>">
+                        <i class="far fa-times-circle del-item" style="color: red"></i>
+                    </a>
+                </td>
             </tr>
             <?php endforeach; ?>
             <tr>

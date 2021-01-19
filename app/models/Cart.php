@@ -20,6 +20,7 @@ class Cart extends AppModel
             $_SESSION['cart'][$id]['qty'] += $qty;
         } else {
             $_SESSION['cart'][$id] = [
+                'id' => $id,
                 'qty' => $qty,
                 'title' => $title,
                 'price' => $price,
@@ -32,5 +33,14 @@ class Cart extends AppModel
         } else {
             $_SESSION['cart.sum'] += $price;
         }
+    }
+
+    public function deleteItem($id)
+    {
+        $qtyMinus = $_SESSION['cart'][$id]['qty'];
+        $sumMinus = $_SESSION['cart'][$id]['qty'] * $_SESSION['cart'][$id]['price'];
+        $_SESSION['cart.qty'] -= $qtyMinus;
+        $_SESSION['cart.sum'] -= $sumMinus;
+        unset($_SESSION['cart'][$id]);
     }
 }

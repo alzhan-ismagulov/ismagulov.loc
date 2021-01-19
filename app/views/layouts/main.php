@@ -1,4 +1,4 @@
-<?php session_destroy();?>
+<?php //session_destroy();?>
 <?php //debug($_SESSION);?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,6 +48,8 @@
                                 <a class="banner__menu-link" href="<?=PATH;?>/signin"><span>Вход</span></a>
                                 <?}?>
                             </li>
+                            <li><a href="cart/show" onclick="getCart(); return false"><i class="fas
+                            fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
                 </div>

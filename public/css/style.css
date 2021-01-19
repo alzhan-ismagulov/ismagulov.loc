@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'glyphicons-halflings-regular';
+  src:url(../fonts/glyphicons-halflings-regular.ttf) format('truetype');
+}
+
 .banner {
   background: url("../image/banner__img.jpg") top center no-repeat;
   background-size: cover;

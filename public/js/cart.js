@@ -13,7 +13,7 @@ $('body').on('click', '.rates__btn', function(e){
         error: function () {
             alert('Ошибка. Попробуйте снова');
         }
-    })
+    });
 });
 function showCart(cart) {
     if ($.trim(cart) == '<h3>Корзина пуста</h3>'){
@@ -23,4 +23,17 @@ function showCart(cart) {
     }
     $('#cart .modal-body').html(cart);
     $('#cart').modal();
+}
+
+function getCart() {
+    $.ajax({
+        url: 'cart/show',//Куда передаются данные
+        type: 'GET',//Каким типом идёт передача
+        success: function (res) {
+            showCart(res);
+        },
+        error: function () {
+            alert('Ошибка. Попробуйте снова');
+        }
+    });
 }

@@ -21583,3 +21583,23 @@
 =================
 [2021-01-18 15:53:07] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
 =================
+[2021-01-19 18:41:58] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-19 18:53:34] Текст ошибки: Контроллер app\controllers\CoursesController не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 45
+=================
+[2021-01-19 18:58:01] Текст ошибки: Метод app\controllers\CartController::deleteAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-19 19:00:10] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/Cart/delete.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-19 19:10:10] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/Cart/delete.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-19 19:13:10] Текст ошибки: Call to undefined function showModal() | Файл: C:\OSPanel\domains\ismagulova.loc\app\views\layouts\main.php | Строка: 51
+=================
+[2021-01-19 19:20:42] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/Cart/delete.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
+=================
+[2021-01-19 19:22:21] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-19 19:22:58] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-19 19:26:58] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
