@@ -13,9 +13,9 @@ class RequestsController extends AppController
     {
         if (!empty($_POST)) {
             $requests = \R::dispense('requests');
-            $requests->sender = h($_POST['sender']);
-            $requests->email = h($_POST['email']);
-            $requests->text = h($_POST['text']);
+            $requests->sender = $_POST['sender'];
+            $requests->email = $_POST['email'];
+            $requests->text = $_POST['text'];
             if ($requests = \R::store($requests)) {
                 $_SESSION['success'] = 'Сообщение добавлено';
             } else {

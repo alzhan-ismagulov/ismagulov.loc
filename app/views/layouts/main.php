@@ -1,51 +1,55 @@
+<?php session_destroy();?>
+<?php //debug($_SESSION);?>
 <!DOCTYPE html>
 <html lang="en">
-<base href="/">
 <head>
+<base href="/">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="<?=PATH;?>/public/css/bootstrap.min.css">
+<!--    fonawesome-->
+    <link rel="stylesheet" href="<?=PATH;?>/public/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
     <title>ismagulova</title>
 </head>
 <body>
-<div class="alert-message" name="alertMessage">
-    <div class="row">
-        <div class="col-md-12">
-            <?=alertMessage();?>
-        </div>
-    </div>
-</div>
+<!--<div class="alert-message" name="alertMessage">-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-12">-->
+<!--            --><?//=alertMessage();?>
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <div class="container__is">
     <div id="header" class="header">
         <div class="wrap banner">
             <div class="banner__top">
                 <div class="banner__logo"><a href="/">ISMAGULOVA</a></div>
                 <div class="banner__menu">
-                    <nav>
-                        <ul>
-                            <li><a href="<?=PATH;?>">ГЛАВНАЯ</a></li>
-                            <li><a href="#description">О КУРСЕ</a></li>
-                            <li><a href="#program">ПРОГРАММА</a></li>
-                            <li><a href="#feedbacks">ОТЗЫВЫ</a></li>
-                            <li><a href="#author">ОБ АВТОРЕ</a></li>
-                            <li><a href="#rates">ТАРИФЫ</a></li>
-                            <li><a href="<?=PATH; ?>#contacts">КОНТАКТЫ</a></li>
-                            <li>
+                    <div class="banner__menu-nav">
+                        <ul class="banner__menu-ul">
+                            <li class="banner__menu-li"><a class="banner__menu-link" href="<?=PATH;?>">ГЛАВНАЯ</a></li>
+                            <li class="banner__menu-li"><a class="banner__menu-link" href="#description">О
+                                    КУРСЕ</a></li>
+                            <li class="banner__menu-li"><a class="banner__menu-link" href="#program">ПРОГРАММА</a></li>
+                            <li class="banner__menu-li"><a class="banner__menu-link" href="#feedbacks">ОТЗЫВЫ</a></li>
+                            <li class="banner__menu-li"><a class="banner__menu-link" href="#author">ОБ АВТОРЕ</a></li>
+                            <li class="banner__menu-li"><a class="banner__menu-link" href="#rates">ТАРИФЫ</a></li>
+                            <li class="banner__menu-li"><a class="banner__menu-link" href="<?=PATH;
+                            ?>#contacts">КОНТАКТЫ</a></li>
+                            <li class="banner__menu-li">
                                 <?php if (isset($_SESSION['user']['name'])){?>
-<!--                                    <a href="privat">--><?php //echo $_SESSION['user']['name'];?><!--</a>-->
-                                    <a href="<?php if ($_SESSION['user']['role'] == 'admin'){?>admin<?} else
-                                        {?>user<?}?>"><?php echo
-                                        $_SESSION['user']['name'];
+                                    <a class="banner__menu-link" href="<?php if ($_SESSION['user']['role'] ==
+                                        'admin'){?>admin<?} else
+                                        {?>user<?}?>"><?php echo $_SESSION['user']['name'];
                                     ?></a>
-                                    <a href="user/logout"> Выход</a>
                                     <?php
                                 } else {?>
-                                <a href="<?=PATH;?>/signin"><span>Вход</span></a>
+                                <a class="banner__menu-link" href="<?=PATH;?>/signin"><span>Вход</span></a>
                                 <?}?>
                             </li>
                         </ul>
-                    </nav>
+                    </div>
                 </div>
             </div>
             <div class="banner__info">
@@ -152,11 +156,14 @@
                 <?php foreach($courses as $course):?>
                 <div class="rates__element">
                     <div class="rates__title"><?=$course['name'];?></div>
-                    <div class="rates__price ohra-price"><?=$course['price'];?></div>
+                    <div class="rates__price ohra-price">
+                        <?=$course['price'];?>
+                    </div>
                     <ul class="rates__description list">
                         <li class="list__element"><?=$course['description'];?></li>
                     </ul>
-                    <a href="#" class="rates__btn" id="finliteracy" name="finliteracy">Купить</a>
+                    <a id="courseAdd" data-id="<?=$course['id'];?>" href="cart/add?id=<?=$course['id'];?>"
+                       class="rates__btn">Купить</a>
                 </div>
                 <?php endforeach;?>
             </div>
@@ -194,15 +201,15 @@
         <div class="footer__wrap">
             <div class="footer__logo footer-block">ismagulova</div>
             <div class="footer__menu footer-block">
-                <nav>
-                    <ul>
-                        <li><a href="#header">ГЛАВНАЯ</a></li>
-                        <li><a href="#description">О КУРСЕ</a></li>
-                        <li><a href="#program">ПРОГРАММА</a></li>
-                        <li><a href="#feedbacks">ОТЗЫВЫ</a></li>
-                        <li><a href="#author">ОБ АВТОРЕ</a></li>
-                        <li><a href="#rates">ТАРИФЫ</a></li>
-                        <li><a href="#contacts">КОНТАКТЫ</a></li>
+                <nav class="footer-menu">
+                    <ul class="footer-menu__ul">
+                        <li class="footer-menu__li"><a href="#header" class="footer-menu__link">ГЛАВНАЯ</a></li>
+                        <li class="footer-menu__li"><a href="#description" class="footer-menu__link">О КУРСЕ</a></li>
+                        <li class="footer-menu__li"><a href="#program" class="footer-menu__link">ПРОГРАММА</a></li>
+                        <li class="footer-menu__li"><a href="#feedbacks" class="footer-menu__link">ОТЗЫВЫ</a></li>
+                        <li class="footer-menu__li"><a href="#author" class="footer-menu__link">ОБ АВТОРЕ</a></li>
+                        <li class="footer-menu__li"><a href="#rates" class="footer-menu__link">ТАРИФЫ</a></li>
+                        <li class="footer-menu__li"><a href="#contacts" class="footer-menu__link">КОНТАКТЫ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -223,6 +230,27 @@
         </a>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Корзина</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
+                <a href="cart/view" type="button" class="btn btn-primary">Оформить заказ</a>
+                <button type="button" class="btn btn-danger" onclick="clearCart()">Очистить корзину</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
 <?php
 $logs = \R::getDatabaseAdapter()
@@ -230,7 +258,10 @@ $logs = \R::getDatabaseAdapter()
     ->getLogger();
 ?>
 <script src="<?=PATH;?>/public/js/jquery-3.5.1.js"></script>
-<script src="/public/js/bootstrap.js"></script>
-<script src="js/script.min.js"></script>
+<script src="<?=PATH;?>/public/js/bootstrap.js"></script>
+<script src="<?=PATH;?>/public/js/cart.js"></script>
+<!--fontawesome-->
+<script src="<?=PATH;?>/public/js/all.js"></script>
+<!--<script src="--><?//=PATH;?><!--js/script.min.js"></script>-->
 </body>
 </html>

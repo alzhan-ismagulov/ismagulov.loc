@@ -25,20 +25,7 @@
                                 <?=$message['created'];?></h6></div>
                         <hr>
                         <div class="col-sm-12">
-                            <div class="form-group">
-                                    <textarea type="text" name="text" id="editor"
-                                              class="form-control" disabled="disabled"><?=$message['text'];?></textarea>
-                            </div>
-                            <script type="application/javascript">
-                                ClassicEditor
-                                    .create( document.querySelector( '#editor' ) )
-                                    // .then( editor => {
-                                    //     console.log( editor );
-                                    // } )
-                                    .catch( error => {
-                                        console.error( error );
-                                    } );
-                            </script>
+                            <div class="form-group"><?=$message['text'];?></div>
                         </div>
                         <?php
                             $message_files = R::getAll("SELECT 

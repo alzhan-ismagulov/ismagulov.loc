@@ -42,20 +42,7 @@
                                 <th colspan="3">Описание курса</th>
                             </tr>
                             <tr>
-                                <td colspan="3">
-                                    <textarea type="text" name="text" id="editor"
-                                              class="form-control"><?=$course['description'];?></textarea>
-                                    <script type="application/javascript">
-                                        ClassicEditor
-                                            .create( document.querySelector( '#editor' ) )
-                                            // .then( editor => {
-                                            //     console.log( editor );
-                                            // } )
-                                            .catch( error => {
-                                                console.error( error );
-                                            } );
-                                    </script>
-                                </td>
+                                <td colspan="3"><?=$course['description'];?></td>
                             </tr>
                             <tr>
                                 <th colspan="3">Цена</th>

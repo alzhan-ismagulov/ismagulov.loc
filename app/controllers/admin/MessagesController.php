@@ -19,10 +19,10 @@ class MessagesController extends AppController
             } else{
                 $messages->parent = '0';
             }
-            $messages->sender = h($_SESSION['user']['id']);
-            $messages->reciever = h($_POST['reciever']);
-            $messages->email = h($_SESSION['user']['email']);
-            $messages->text = h($_POST['text']);
+            $messages->sender = $_SESSION['user']['id'];
+            $messages->reciever = $_POST['reciever'];
+            $messages->email = $_SESSION['user']['email'];
+            $messages->text = $_POST['text'];
             if(\R::store($messages)) {
                 unset($_SESSION['message_id']);
                 if (isset($_SESSION['file'])){
@@ -229,15 +229,15 @@ class MessagesController extends AppController
         if (!empty($_POST)) {
             $messages = \R::dispense('messages');
             if(isset($_GET['message_id'])){
-                $messages->parent = h($_GET['message_id']);
+                $messages->parent = $_GET['message_id'];
             } else{
                 $messages->parent = NULL;
             }
-            $messages->sender = h($_SESSION['user']['id']);
+            $messages->sender = $_SESSION['user']['id'];
             $messages->parent = $_GET['message_id'];
             $messages->reciever = $_POST['reciever'];
-            $messages->email = h($_SESSION['user']['email']);
-            $messages->text = h($_POST['text']);
+            $messages->email = $_SESSION['user']['email'];
+            $messages->text = $_POST['text'];
             if(\R::store($messages)) {
                 if (isset($_SESSION['file'])){
                     $files = $_SESSION['file'];
