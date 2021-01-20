@@ -13,13 +13,6 @@
     <title>ismagulova</title>
 </head>
 <body>
-<!--<div class="alert-message" name="alertMessage">-->
-<!--    <div class="row">-->
-<!--        <div class="col-md-12">-->
-<!--            --><?//=alertMessage();?>
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 <div class="container__is">
     <div id="header" class="header">
         <div class="wrap banner">
@@ -34,7 +27,7 @@
                             <li class="banner__menu-li"><a class="banner__menu-link" href="#program">ПРОГРАММА</a></li>
                             <li class="banner__menu-li"><a class="banner__menu-link" href="#feedbacks">ОТЗЫВЫ</a></li>
                             <li class="banner__menu-li"><a class="banner__menu-link" href="#author">ОБ АВТОРЕ</a></li>
-                            <li class="banner__menu-li"><a class="banner__menu-link" href="#rates">ТАРИФЫ</a></li>
+                            <li class="banner__menu-li"><a class="banner__menu-link" href="#rates">КУРСЫ</a></li>
                             <li class="banner__menu-li"><a class="banner__menu-link" href="<?=PATH;
                             ?>#contacts">КОНТАКТЫ</a></li>
                             <li class="banner__menu-li">
@@ -153,7 +146,7 @@
     </div>
     <div id="rates" class="rates">
         <div class="wrap rates__wrap">
-            <div class="block__title"><span>Услуги</span></div>
+            <div class="block__title"><span>Курсы</span></div>
             <div class="rates__block">
                 <?php foreach($courses as $course):?>
                 <div class="rates__element">
@@ -238,7 +231,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Корзина</h4>
+                <h6 class="modal-title text-primary" id="myModalLabel">Корзина</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">

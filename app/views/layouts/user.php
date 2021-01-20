@@ -38,27 +38,30 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">Home</a>
+                <a href="/" class="nav-link">Главная</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
+                <a href="<?=PATH;?>/#description" class="nav-link">О курсе</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#program" class="nav-link">Программа</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#feedbacks" class="nav-link">Отзывы</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#author" class="nav-link">Об авторе</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#rates" class="nav-link">Курсы</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#contacts" class="nav-link">Контакты</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="<?=PATH;?>/user/logout" class="nav-link">Выход</a>
             </li>
         </ul>
-
-        <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
-            <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-navbar" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
@@ -176,6 +179,14 @@
                                 </a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="<?=PATH;?>/cart/view" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Моя корзина
+                            </p>
+                        </a>
                     </li>
                 </ul>
             </nav>

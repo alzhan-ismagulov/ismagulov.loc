@@ -42,3 +42,17 @@ function getCart() {
         }
     });
 }
+
+function clearCart() {
+    $.ajax({
+        url: 'cart/clear',//Куда передаются данные
+        type: 'GET',//Каким типом идёт передача
+        success: function (res) {
+            showCart(res);
+        },
+        error: function () {
+            alert('Ошибка. Попробуйте снова');
+        }
+    });
+    // return false;
+}

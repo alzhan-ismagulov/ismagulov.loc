@@ -21611,3 +21611,56 @@
 =================
 [2021-01-19 19:50:05] Текст ошибки: На найден вид C:\OSPanel\domains\ismagulova.loc/app/views/Cart/delete.php | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\base\View.php | Строка: 43
 =================
+[2021-01-19 23:12:16] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND messages.reading = '0' -- keep-cache' at line 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-19 23:14:26] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND messages.reading = '0' -- keep-cache' at line 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-19 23:15:08] Текст ошибки: Метод app\controllers\CartController::signinAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-19 23:15:58] Текст ошибки: Метод app\controllers\CartController::indexAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-19 23:16:12] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND messages.reading = '0' -- keep-cache' at line 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-19 23:17:50] Текст ошибки: Метод app\controllers\CartController::signinAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-19 23:18:58] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-19 23:51:19] Текст ошибки: Метод app\controllers\CartController::indexAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-19 23:51:30] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-19 23:51:57] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-20 10:30:18] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-20 10:33:57] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-20 10:34:04] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-20 10:35:01] Текст ошибки: Метод app\controllers\CartController::checkoutAction не найден | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 41
+=================
+[2021-01-20 14:31:24] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ismagulova.order' doesn't exist | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-20 14:39:01] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND messages.reading = '0' -- keep-cache' at line 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-20 14:39:46] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND messages.reading = '0' -- keep-cache' at line 1 | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+=================
+[2021-01-20 16:49:24] Текст ошибки: Страница не найдена | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\ismagulova\core\Router.php | Строка: 49
+=================
+[2021-01-20 18:05:05] Текст ошибки: Class 'app\models\Swift_SmtpTransport' not found | Файл: C:\OSPanel\domains\ismagulova.loc\app\models\Order.php | Строка: 31
+=================
+[2021-01-20 18:10:49] Текст ошибки: Failed to authenticate on SMTP server with username "adm1nistratorportala@yandex.ru" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code "535", with message "535 5.7.8 Error: authentication failed: Invalid format.
+". Authenticator PLAIN returned Expected response code 235 but got code "535", with message "535 5.7.8 Error: authentication failed: Invalid format.
+". Authenticator XOAUTH2 returned Expected response code 235 but got code "535", with message "535 5.7.8 Error: authentication failed: Invalid format.
+". | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\swiftmailer\swiftmailer\lib\classes\Swift\Transport\Esmtp\AuthHandler.php | Строка: 191
+=================
+[2021-01-20 18:15:32] Текст ошибки: Failed to authenticate on SMTP server with username "adm1nistratorportala@yandex.ru" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code "535", with message "535 5.7.8 Error: authentication failed: Invalid format.
+". Authenticator PLAIN returned Expected response code 235 but got code "535", with message "535 5.7.8 Error: authentication failed: Invalid format.
+". Authenticator XOAUTH2 returned Expected response code 235 but got code "535", with message "535 5.7.8 Error: authentication failed: Invalid format.
+". | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\swiftmailer\swiftmailer\lib\classes\Swift\Transport\Esmtp\AuthHandler.php | Строка: 191
+=================
+[2021-01-20 18:16:28] Текст ошибки: Failed to authenticate on SMTP server with username "adm1nistratorportala@yandex.ru" using 3 possible authenticators. Authenticator LOGIN returned Expected response code 235 but got code "535", with message "535 5.7.8 Error: authentication failed: Invalid user or password!
+". Authenticator PLAIN returned Expected response code 235 but got code "535", with message "535 5.7.8 Error: authentication failed: Invalid user or password!
+". Authenticator XOAUTH2 returned Expected response code 235 but got code "535", with message "535 5.7.8 Error: authentication failed: Invalid user or password!
+". | Файл: C:\OSPanel\domains\ismagulova.loc\vendor\swiftmailer\swiftmailer\lib\classes\Swift\Transport\Esmtp\AuthHandler.php | Строка: 191
+=================

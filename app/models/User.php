@@ -215,10 +215,6 @@ class User extends AppModel
 
     public function update()
     {
-//        if(isset($_POST)){
-//            debug($_SESSION['token']);
-//            debug($_POST);
-//        }
         if(isset($_POST['password'])) {
             $password = h($_POST['password']);
             $repeat_password = h($_POST['repeat_password']);

@@ -103,8 +103,11 @@ class UserController extends AppController {
                     redirect(ADMIN);
                 } else {
                     $_SESSION['success'] = 'Вы успешно авторизованы';
-//                    redirect(PATH . '/privat');
-                    redirect(PATH . '/user');
+                    if (isset($_SESSION['cart'])){
+                        redirect(PATH. '/cart/view');
+                    } else {
+                        redirect(PATH . '/user');
+                    }
                 }
             }else{
                 $_SESSION['error'] = 'Логин/пароль введены неверно';
@@ -138,5 +141,13 @@ class UserController extends AppController {
         $user = new User();
         $user->update();
         $this->setMeta('Обновление пароля');
+    }
+
+    public static function checkAuth(){
+        return isset($_SESSION['user']);
+    }
+
+    public static function isAdmin(){
+        return (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin');
     }
 }
