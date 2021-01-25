@@ -33,6 +33,14 @@
                                 </div>
                             </div>
                             <div class="col-sm-12">
+                                <div class="form group">
+                                    <input type="text" id="subject" name="subject" class="form-control"
+                                           placeholder="Тема: "
+                                           value="<?=$parent_message['subject'];?>">
+                                </div>
+                            </div>
+                            <p></p>
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <textarea type="text" name="text" id="editor"
                                               class="form-control">

@@ -36,27 +36,48 @@
                                   hidden="true"></span>
                         </div>
                         <div class="form-group has-feedback">
-                            <label for="name"><h5>Название курса</h5></label>
                             <input type="text"
                                    id="name"
                                    name="name"
                                    class="form-control"
-                                   placeholder= "Измените название курса?"
+                                   placeholder= "Измените название курса"
                                    value="<?=$course['name'];?>"
                                    required>
                             <span class="glyphicon form-control-feedback" aria-
                                   hidden="true"></span>
                         </div>
                         <div class="form-group has-feedback">
-                            <label for="text"><h5>Введите описание</h5></label>
-                            <textarea
-                                    rows="10"
-                                    id="editor1"
-                                    name="description"
-                                    class="form-control"
-                                    placeholder="Введите описание"><?=($course['description']);?></textarea>
+                            <input type="text"
+                                   id="description"
+                                   name="description"
+                                   class="form-control"
+                                   placeholder= "Измените описание курса"
+                                   value="<?=$course['description'];?>"
+                                   required>
                             <span class="glyphicon form-control-feedback" aria-
                                   hidden="true"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label for="text"><h5>Введите текст</h5></label>
+                            <textarea
+                                    id="editor"
+                                    name="text"
+                                    шв="text"
+                                    class="form-control"
+                                    placeholder="Введите описание"><?=($course['text']);
+                                    ?></textarea>
+                            <span class="glyphicon form-control-feedback" aria-
+                                  hidden="true"></span>
+                            <script type="application/javascript">
+                                ClassicEditor
+                                    .create( document.querySelector( '#editor' ) )
+                                    // .then( editor => {
+                                    //     console.log( editor );
+                                    // } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
                         </div>
                         <div class="form-group has-feedback">
                             <label for="price"><h5>Цена курса</h5></label>

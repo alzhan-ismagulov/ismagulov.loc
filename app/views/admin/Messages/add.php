@@ -41,6 +41,12 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" name="subject" id="subject" class="form-control"
+                                           placeholder="Тема письма">
+                                </div>
+                            </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <textarea type="text" name="text" id="editor"

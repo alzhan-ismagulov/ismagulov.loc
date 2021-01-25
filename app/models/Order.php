@@ -11,9 +11,10 @@ class Order extends AppModel
 {
     public static function saveOrder($data)
     {
-        $order = \R::dispense('order');
+        $order = \R::dispense('orders');
         $order->user_id = $data['user_id'];
         $order->note = $data['note'];
+        $order->sum = $_SESSION['cart.sum'];
 //        $order->currency = $_SESSION['cart.currency']['code'];
         $order_id = \R::store($order);
         self::saveOrderCourse($order_id);
@@ -30,6 +31,7 @@ class Order extends AppModel
     }
 
     public static function mailOrder($order_id, $user_email, $course_title){
+        try {
         //Create Transport
         $transport = (new Swift_SmtpTransport(
             App::$app->getProperty('smtp_host'),
@@ -63,10 +65,13 @@ class Order extends AppModel
         //Send the message
         $result = $mailer->send($message_user);
         $result = $mailer->send($message_admin);
+        } catch (\Exception $e){
+
+        }
         unset($_SESSION['cart']);
         unset($_SESSION['cart.qty']);
         unset($_SESSION['cart.sum']);
         unset($_SESSION['course_title']);
-        $_SESSION['success'] = 'Спасибо за Ваш заказ. После оплаты Вы можете увидеть свой курс в личном кабинете в разделе "Мои курсы"';
+        $_SESSION['success'] = 'Спасибо за Ваш заказ. После оплаты Вы можете увидеть свой курс в личном кабинете в разделе "Мои заказы"';
     }
 }

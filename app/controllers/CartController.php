@@ -6,7 +6,9 @@ namespace app\controllers;
 
 use app\models\Cart;
 use app\models\Order;
+use app\models\Request;
 use app\models\User;
+use ismagulova\App;
 
 class CartController extends AppController
 {
@@ -70,7 +72,50 @@ class CartController extends AppController
         $user_email = isset($_SESSION['user']['email']) ? $_SESSION['user']['email'] : $_POST['email'];
         $course_title = $_SESSION['course_title'];
         $order_id = Order::saveOrder($data);
+
+//        Данные для оплаты
+        if (!empty($_POST['pay'])){
+            self::setPaymentData($order_id);
+        }
         Order::mailOrder($order_id, $user_email, $course_title);
+        if (!empty($_POST['pay'])){
+            redirect(PATH.'/payment/form.php');
+        }
         redirect();
+    }
+
+    public static function setPaymentData($order_id){
+        if (isset($_SESSION['payment'])) unset($_SESSION['payment']);
+        $_SESSION['payment']['id'] = $order_id;
+        //Для валюты
+//        $_SESSION['payment']['curr'] = $_SESSION['cart.currency']['code'];
+        $_SESSION['payment']['sum'] = $_SESSION['cart.sum'];
+    }
+
+    public function paymentAction()
+    {
+        if (empty($_POST)){
+            die;
+        }
+
+        $dataSet = $_POST;
+
+        unset($dataSet['ik_sign']);
+        ksort($dataSet, SORT_STRING);
+        array_push($dataSet, App::$app->getProperty('ik_key'));//ПОменять ключ на реальный в файле params.php
+        $signString = implode(':', $dataSet);
+        $sign = base64_encode(md5($signString, true));
+
+        $order = \R::load('orders', (int)$dataSet['ik_pm_no']);
+        if (!$order) die;
+        if ($dataSet['ik_ko_id'] != App::$app->getProperty('ik_id') ||
+            $dataSet['ik_inv_st'] != 'success' ||
+            $dataSet['ik_am'] != $order->sum ||
+            $sign != $_POST['ik_sign']){
+            die;
+        }
+        $order->status = '1';
+        \R::store($order);
+        die;
     }
 }

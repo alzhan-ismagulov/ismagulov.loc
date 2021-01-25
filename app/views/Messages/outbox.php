@@ -27,6 +27,7 @@
                                 <th style="width: 10px">#</th>
                                 <th style="width: 200px">Дата</th>
                                 <th>Кому</th>
+                                <th>Тема</th>
                                 <th style="width: 40px">Действия</th>
                             </tr>
                             </thead>
@@ -39,6 +40,7 @@
                                             <?=$message['name'];?>
                                         </a>
                                     </td>
+                                    <td><?=$message['subject'];?></td>
                                     <td><a href="<?=PATH;?>/messages/delete?id=<?=$message['id'];?>" class="btn
                                         btn-danger btn-xs">Удалить</a></td>
                                 </tr>

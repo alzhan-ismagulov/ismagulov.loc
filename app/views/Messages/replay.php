@@ -34,6 +34,9 @@
                                            value="<?=$parent_message['sender'];?>" hidden>
                                 </div>
                             </div>
+                            <div class="col-sm-12"><input type="text" class="form-control" id="subject"
+                                                          name="subject" placeholder="Тема"></div>
+                            <p></p>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <textarea type="text" name="text" id="editor"

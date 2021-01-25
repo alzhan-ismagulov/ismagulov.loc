@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?=PATH;?>/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=PATH;?>/public/css/upload.css">
     <link rel="stylesheet" href="<?=PATH;?>/public/css/style.css">
+    <link rel="stylesheet" href="<?=PATH;?>/public/content-styles.css" type="text/css">
     <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
 <!--    <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>-->
     <link rel="stylesheet" href="<?=PATH;?>/public/css/dropzone.css">
@@ -38,10 +39,25 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="<?=PATH;?>" class="nav-link">Home</a>
+                <a href="/" class="nav-link">Главная</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
+                <a href="<?=PATH;?>/#description" class="nav-link">О курсе</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#program" class="nav-link">Программа</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#feedbacks" class="nav-link">Отзывы</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#author" class="nav-link">Об авторе</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#rates" class="nav-link">Курсы</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="<?=PATH;?>/#contacts" class="nav-link">Контакты</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="<?=PATH;?>/user/logout" class="nav-link">Выход</a>
@@ -154,6 +170,22 @@
             </div>
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Заказы
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=PATH;?>/admin/orders" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Список заказов</p>
+                                </a>
+                            </li>
+                        </ul>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
@@ -296,6 +328,40 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Настройки шаблона
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=ADMIN;?>/sections" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Секции</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Отзывы
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=ADMIN;?>/feedbacks" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Посмотреть отзывы</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -337,7 +403,7 @@
 <script src="<?=PATH;?>/public/js/dropzone.js"></script>
 <script src="<?=PATH;?>/public/js/main.js"></script>
 <!--<script src="/public/js/ajaxupload.js"></script>-->
-<!--<script src="/public/js/my.js"></script>-->
+<script src="<?=PATH;?>/public/js/my.js"></script>
 <script src="<?=PATH;?>/public/js/bootstrap.js"></script>
 <script src="<?=PATH;?>/public/js/core.js"></script>
 <script src="<?=PATH;?>/public/js/upload.js"></script>

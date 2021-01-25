@@ -45,6 +45,8 @@
                                             <?php endforeach;?>
                                         </select>
                                 </div>
+                                <div class="form-group"><input type="text" name="subject" class="form-control"
+                                                               placeholder="Тема:"></div>
                                 <div class="form-group">
                                     <textarea type="text" name="text" id="editor"
                                               class="form-control"></textarea>

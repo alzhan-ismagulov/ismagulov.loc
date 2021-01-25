@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 19 2021 г., 19:33
+-- Время создания: Янв 22 2021 г., 02:52
 -- Версия сервера: 5.7.29
 -- Версия PHP: 7.1.33
 
@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
   `author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -42,10 +43,11 @@ CREATE TABLE `courses` (
 -- Дамп данных таблицы `courses`
 --
 
-INSERT INTO `courses` (`id`, `name`, `description`, `price`, `author`, `created`, `begin`, `status`) VALUES
-(1, 'Курс по финансовой грамотности', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 10000, 'Alzhan', '2020-11-02 14:58:15', '2020-11-02 14:58:15', '1'),
-(2, 'Курс по инвестициям', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 40000, 'Alzhan', '2020-11-03 02:02:22', '2020-11-03 02:02:22', '1'),
-(3, 'Финансовые консультации', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', 30000, 'Alzhan', '2020-11-30 12:49:49', '2020-11-30 12:49:49', '1');
+INSERT INTO `courses` (`id`, `name`, `description`, `text`, `price`, `author`, `created`, `begin`, `status`) VALUES
+(1, 'Курс по финансовой грамотности', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', '', 10000, 'Alzhan', '2020-11-02 14:58:15', '2020-11-02 14:58:15', '1'),
+(2, 'Курс по инвестициям', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', '', 40000, 'Alzhan', '2020-11-03 02:02:22', '2020-11-03 02:02:22', '1'),
+(3, 'Финансовые консультации', '<p>видео уроки<br>раздаточный материал для выполнения домашних заданий<br>общий чат с преподавателем<br>проверка домашнего задания<br>общий созвон с мной для сессии вопросов и ответов</p>', '', 30000, 'Alzhan', '2020-11-30 12:49:49', '2020-11-30 12:49:49', '1'),
+(5, 'Курс 5', '<p>Текст курса 55</p>', '<p>Текст курса 5</p>', 123, 'Alzhan', '2021-01-21 14:04:24', '2021-01-21 14:04:24', '0');
 
 -- --------------------------------------------------------
 
@@ -147,6 +149,7 @@ CREATE TABLE `messages` (
   `sender` int(11) NOT NULL,
   `reciever` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text` text COLLATE utf8mb4_unicode_ci,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `reading` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
@@ -157,8 +160,9 @@ CREATE TABLE `messages` (
 -- Дамп данных таблицы `messages`
 --
 
-INSERT INTO `messages` (`id`, `parent`, `sender`, `reciever`, `email`, `text`, `created`, `reading`, `visible`) VALUES
-(7, 1, 35, 35, 'alzhan_ismagulov@list.ru', '<p><strong>Троянский Cov: ученые объяснили феномен повторного заражения</strong></p>', '2021-01-15 01:15:20', '1', '1');
+INSERT INTO `messages` (`id`, `parent`, `sender`, `reciever`, `email`, `subject`, `text`, `created`, `reading`, `visible`) VALUES
+(18, 0, 36, 35, 'adm1nistratorportala@yandex.ru', 'Тема 5 от пользователя', '<p>Письмо 5 от пользователя</p>', '2021-01-21 13:42:20', '1', '1'),
+(19, 18, 36, 36, 'adm1nistratorportala@yandex.ru', 'Ответ на тему 5', '<p>Ответ на 5<br>Предыдущее сообщение:</p><p>Письмо 5 от пользователя</p>', '2021-01-21 13:45:15', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -172,6 +176,52 @@ CREATE TABLE `my_courses` (
   `course` int(11) NOT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified` timestamp NULL DEFAULT NULL,
+  `currency` enum('KZT','RUR','EUR','USD') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'KZT',
+  `note` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `status`, `created`, `modified`, `currency`, `note`) VALUES
+(28, 36, '0', '2021-01-21 19:04:59', '2021-01-22 01:41:37', 'KZT', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `order_course`
+--
+
+CREATE TABLE `order_course` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `order_id` int(10) UNSIGNED NOT NULL,
+  `course_id` int(10) UNSIGNED NOT NULL,
+  `qty` int(10) NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `order_course`
+--
+
+INSERT INTO `order_course` (`id`, `order_id`, `course_id`, `qty`, `title`, `price`) VALUES
+(33, 28, 2, 1, 'Курс по инвестициям', 40000),
+(34, 28, 3, 2, 'Финансовые консультации', 30000);
 
 -- --------------------------------------------------------
 
@@ -285,6 +335,20 @@ ALTER TABLE `my_courses`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `order_course`
+--
+ALTER TABLE `order_course`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`id`),
+  ADD KEY `order_id_2` (`order_id`);
+
+--
 -- Индексы таблицы `requests`
 --
 ALTER TABLE `requests`
@@ -312,7 +376,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `currency`
@@ -348,13 +412,25 @@ ALTER TABLE `messagefiles`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT для таблицы `my_courses`
 --
 ALTER TABLE `my_courses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT для таблицы `order_course`
+--
+ALTER TABLE `order_course`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT для таблицы `requests`
@@ -373,6 +449,16 @@ ALTER TABLE `streams`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `order_course`
+--
+ALTER TABLE `order_course`
+  ADD CONSTRAINT `order_course_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -26,7 +26,8 @@
                             <tr>
                                 <th style="width: 10px">#</th>
                                 <th style="width: 200px">Дата</th>
-                                <th>От кого:</th>
+                                <th>От кого: </th>
+                                <th>Тема: </th>
                                 <th style="width: 40px">Действия</th>
                             </tr>
                             </thead>
@@ -46,6 +47,7 @@
                                         <?}?>
 <!--                                        Конец проверки-->
                                     </td>
+                                    <td><?=$message['subject'];?></td>
                                     <td><a href="<?=ADMIN;?>/messages/delete?id=<?=$message['id'];?>" class="btn
                                         btn-danger btn-xs">Удалить</a></td>
                                 </tr>

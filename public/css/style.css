@@ -20,6 +20,13 @@
   left: 0;
   top: 0;
 }
+/*Делаем textarea большим*/
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused),
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  min-height: 300px;
+  !important;
+}
 
 header {
   width: 100%;
@@ -34,6 +41,21 @@ header .header__wrap {
   align-content: space-between;
   margin: 0 auto;
   line-height: 100px;
+}
+
+.success{
+  /*background-color: #a5dc86;*/
+  background-color: #ddfcd8;
+}
+.danger{
+  background-color: #fcd8da;
+}
+
+.image_user{
+  margin: 20px 0px 0px 20px;
+}
+.card-feedback{
+  padding: 20px;
 }
 
 header .header__logo {

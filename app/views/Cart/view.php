@@ -47,6 +47,11 @@
                                     <label for="address">Дополнение</label>
                                     <textarea name="note" class="form-control"></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="pay">
+                                        <input type="checkbox" id="pay" name="pay"> Оплатить онлайн
+                                    </label>
+                                </div>
                                 <button type="submit" class="btn btn-default">Оформить</button>
                             </form>
                     </div>

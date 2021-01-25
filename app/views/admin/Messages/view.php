@@ -24,8 +24,12 @@
                         <div class="card-subtitle col-md-12 text-muted"><h6>Дата отправления:
                                 <?=$message['created'];?></h6></div>
                         <hr>
+                        <div class="col-md-12">
+                            <div class="form-group"><b>Тема:</b> <?=$message['subject'];?></div>
+                        </div>
+                        <hr>
                         <div class="col-sm-12">
-                            <div class="form-group"><?=$message['text'];?></div>
+                            <div class="form-group"><b>Текст сообщения:<hr></b> <?=$message['text'];?></div>
                         </div>
                         <?php
                             $message_files = R::getAll("SELECT 

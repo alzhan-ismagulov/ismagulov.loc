@@ -12,6 +12,8 @@ class AppController extends Controller
 
     public function __construct($route)
     {
+        restrictArea();
+        restrictUser();
         parent::__construct($route);
         new AppModel();
     }

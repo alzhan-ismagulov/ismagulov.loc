@@ -9,6 +9,7 @@ class Course extends \app\models\AppModel
     public $attributes = [
         'name' => '',
         'description' => '',
+        'text' => '',
         'price' => '',
         'author' => '',
         'created' => '',
@@ -19,6 +20,7 @@ class Course extends \app\models\AppModel
         'required' => [
             ['name'],
             ['description'],
+            ['text'],
             ['price'],
         ],
         'integer' => [
@@ -39,28 +41,16 @@ class Course extends \app\models\AppModel
                 redirect();
             } else {
                 $course = \R::dispense('courses');
-                $course->name = h($_POST['name']);
-                $course->description = h($_POST['description']);
-                $course->price = h($_POST['price']);
+                $course->name = $_POST['name'];
+                $course->description = $_POST['description'];
+                $course->text = $_POST['text'];
+                $course->price = $_POST['price'];
                 $course->author = $_SESSION['user']['name'];
                 if(\R::store($course)){
                     $_SESSION['success'] = "Запись в таблицу курсов сделана успешно";
                 } else {
                     $_SESSION['error'] = "\"Запись в таблицу курсов не удалась";
                 }
-//                $lessons = ($_POST['lesson']);
-//                for ($i=0; $i<sizeof ($lessons);$i++) {
-//                $stream = \R::dispense('streams');
-//                $id = \R::getAll("SELECT courses.id FROM courses ORDER BY courses.id DESC LIMIT 1");
-//                $data = implode(",", $id[0]);
-//                $stream->courses = $data;
-//                    $stream->lessons = $lessons[$i];
-//                    if(\R::store($stream)){
-//                        $_SESSION['success'] = "Запись в таблицу уроков сделана успешно";
-//                    } else {
-//                        $_SESSION['error'] = "Запись в таблицу уроков сделана не успешно";
-//                    }
-//                }
                     redirect(ADMIN.'/courses');
             }
         }
@@ -78,23 +68,13 @@ class Course extends \app\models\AppModel
             $course = \R::findOne('courses', 'id = ?', [$course_id]);
             $course->name = $_POST['name'];
             $course->description = $_POST['description'];
+            $course->description = $_POST['text'];
             $course->price = $_POST['price'];
             if (\R::store($course)) {
                 $_SESSION['success'] = 'Ваш курс обновлен!';
             } else {
                 $_SESSION['error'] = 'Не удалось обновить курс!';
             }
-//            $lessons = ($_POST['lesson']);
-//            for ($i=0; $i<sizeof ($lessons);$i++) {
-//                $stream = \R::dispense('streams');
-//                $stream->courses = $course_id;
-//                $stream->lessons = $lessons[$i];
-//                if(\R::store($stream)){
-//                    $_SESSION['success'] = "Запись в таблицу уроков сделана успешно";
-//                } else {
-//                    $_SESSION['error'] = "Запись в таблицу уроков сделана не успешно";
-//                }
-//            }
                     redirect(ADMIN . '/courses');
         }
     }

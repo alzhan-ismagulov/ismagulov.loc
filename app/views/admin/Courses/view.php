@@ -45,6 +45,12 @@
                                 <td colspan="3"><?=$course['description'];?></td>
                             </tr>
                             <tr>
+                                <th colspan="3">Текст курса</th>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><?=$course['text'];?></td>
+                            </tr>
+                            <tr>
                                 <th colspan="3">Цена</th>
                             </tr>
                             <tr>

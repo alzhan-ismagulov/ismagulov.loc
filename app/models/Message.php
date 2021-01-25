@@ -10,6 +10,7 @@ class Message extends AppModel
         'sender' => '',
         'reciever' => '',
         'email' => '',
+        'subject' => '',
         'text' => '',
         'files' => '',
     ];

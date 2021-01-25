@@ -28,6 +28,7 @@ class CoursesController extends AppController
                                         `courses`.`id`, 
                                         `courses`.`name`,  
                                         `courses`.`description`, 
+                                        `courses`.`text`, 
                                         `courses`.`price`,
                                         `courses`.`author`,
                                         `courses`.`created`, 
@@ -74,6 +75,7 @@ class CoursesController extends AppController
                                         `courses`.`id`,
                                         `courses`.`name`,
                                         `courses`.`description`,
+                                        `courses`.`text`,
                                         `courses`.`price`,
                                         `courses`.`author`,
                                         `courses`.`created`,
@@ -139,13 +141,14 @@ class CoursesController extends AppController
 
     public function viewAction()
     {
-        restrictArea();
         restrictUser();
+        restrictArea();
         $course_id = $_GET['id'];
         $course = \R::getRow("SELECT 
                                         `courses`.`id`,
                                         `courses`.`name`,
                                         `courses`.`description`,
+                                        `courses`.`text`,
                                         `courses`.`price`,
                                         `courses`.`created`,
                                         `courses`.`begin`,
@@ -176,6 +179,8 @@ class CoursesController extends AppController
 
     public function changeAction()
     {
+        restrictUser();
+        restrictArea();
         $course = new Course();
         $course->change();
     }

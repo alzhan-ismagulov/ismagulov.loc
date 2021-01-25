@@ -1,6 +1,5 @@
 <?php
 
-
 namespace app\controllers\admin;
 
 use app\models\admin\Message;
@@ -22,7 +21,9 @@ class MessagesController extends AppController
             $messages->sender = $_SESSION['user']['id'];
             $messages->reciever = $_POST['reciever'];
             $messages->email = $_SESSION['user']['email'];
+            $messages->subject = $_POST['subject'];
             $messages->text = $_POST['text'];
+//            debug($messages);
             if(\R::store($messages)) {
                 unset($_SESSION['message_id']);
                 if (isset($_SESSION['file'])){
@@ -41,6 +42,7 @@ class MessagesController extends AppController
                 }
                 $_SESSION['success'] = 'Сообщение отправлено';
                 $res = ['answer' => 'success', 'message' => 'Message upload'];
+                unset($_SESSION['file']);
             } else {
                 $_SESSION['error'] = 'Сообщение не отправлено';
                 $res = ['answer' => 'error'];
@@ -49,6 +51,7 @@ class MessagesController extends AppController
         }
         $this->setMeta("Добавить сообщение");
     }
+
     public function inboxAction()
     {
         restrictArea();
@@ -64,6 +67,7 @@ class MessagesController extends AppController
         messages.sender = users.name, 
         messages.reciever, 
         messages.email, 
+        messages.subject, 
         messages.text, 
         messages.created, 
         messages.reading,
@@ -92,6 +96,7 @@ class MessagesController extends AppController
         messages.sender, 
         messages.reciever = users.name, 
         messages.email, 
+        messages.subject, 
         messages.text, 
         messages.created, 
         messages.reading,
@@ -116,6 +121,7 @@ class MessagesController extends AppController
                 messages.sender = users.name,
                 messages.reciever,
                 messages.email,
+                messages.subject,
                 messages.text,
                 messages.created,
                 messages.reading,
@@ -139,6 +145,7 @@ class MessagesController extends AppController
         messages.sender, 
         messages.reciever, 
         messages.email, 
+        messages.subject, 
         messages.text, 
         messages.created, 
         messages.reading
@@ -214,6 +221,7 @@ class MessagesController extends AppController
                         messages.sender,
                         messages.reciever,
                         messages.email,
+                        messages.subject,
                         messages.text,
                         messages.created,
                         users.id,
@@ -237,6 +245,7 @@ class MessagesController extends AppController
             $messages->parent = $_GET['message_id'];
             $messages->reciever = $_POST['reciever'];
             $messages->email = $_SESSION['user']['email'];
+            $messages->subject = $_POST['subject'];
             $messages->text = $_POST['text'];
             if(\R::store($messages)) {
                 if (isset($_SESSION['file'])){

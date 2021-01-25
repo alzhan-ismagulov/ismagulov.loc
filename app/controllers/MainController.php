@@ -8,6 +8,7 @@ use ismagulova\Cache;
 class MainController extends AppController
 {
     public $layout = 'main';
+//    public $layout = 'uikit';
 
     public function indexAction()
     {

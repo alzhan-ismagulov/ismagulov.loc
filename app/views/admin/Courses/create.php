@@ -28,16 +28,25 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <!-- text input -->
-                                            <label>Название курса</label>
-                                            <input type="text" name="name"
-                                                   id="name"
-                                                   class="form-control"
-                                                   placeholder="Название">
+                                        <label>Название курса</label>
+                                        <input type="text" name="name"
+                                               id="name"
+                                               class="form-control"
+                                               placeholder="Название">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea name="description" id="editor" class="form-control"
+                                        <input type="text"
+                                               class="form-control"
+                                               id="description"
+                                               name="description"
+                                               placeholder="Описание курса">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="text" id="editor" class="form-control"
                                                   rows="10">
                                                         </textarea>
                                         <script type="application/javascript">

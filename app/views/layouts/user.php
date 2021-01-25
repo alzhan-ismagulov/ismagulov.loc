@@ -1,3 +1,4 @@
+<?php //unset($_SESSION['file']);?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="<?=PATH;?>/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=PATH;?>/public/css/upload.css">
     <link rel="stylesheet" href="<?=PATH;?>/public/css/style.css">
+    <link rel="stylesheet" href="<?=PATH;?>/public/content-styles.css" type="text/css">
     <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
     <!--    <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>-->
     <link rel="stylesheet" href="<?=PATH;?>/public/css/dropzone.css">
@@ -143,11 +145,11 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="<?=PATH;?>/orders" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Мои курсы
-                                <i class="fas fa-angle-left right"></i>
+                                Мои заказы
+<!--                                <i class="fas fa-angle-left right"></i>-->
                             </p>
                         </a>
                     </li>

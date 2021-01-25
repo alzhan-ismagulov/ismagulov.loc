@@ -21,8 +21,12 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="card-subtitle col-md-12 text-muted"><h6>Дата отправления:
+                        <div class="card-subtitle col-md-12"><h6><b>Дата отправления:</b>
                                 <?=$message['created'];?></h6></div>
+                        <hr>
+                        <div class="col-sm-12">
+                            <b>Тема: </b><?=$message['subject'];?>
+                        </div>
                         <hr>
                         <div class="col-sm-12">
                             <div class="form-group">

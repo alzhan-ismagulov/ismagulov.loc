@@ -277,4 +277,52 @@ $(function(){
             maxFilesize: 4
         });
     }
+
+    // Загрузка фото для отзыва
+
+    if (document.getElementById('uploadimageforfeedback')) {
+        var myDropzone = new Dropzone("div#uploadimageforfeedback", {
+            addRemoveLinks: true,
+            removedfile: function (file) {
+                var name = file.name;
+
+                $.ajax({
+                    type: 'POST',
+                    url: adminpath + '/feedbacks/delete-files',
+                    data: {"file": name},
+                    success: function (res) {
+                        var _ref;
+                        return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+                    }
+                })
+
+            },
+            paramName: "files",
+            url: adminpath + "/feedbacks/upload",
+            maxFiles: 1,
+            success: function (file, responce) {
+                var url = file.dataURL,
+                    res = JSON.parse(responce);
+                if (res.answer == 'error') {
+                    this.defaultOptions.error(file, res.error);
+                    this.removeFile(file);
+                    $('#answer').html(`<div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    ${res.error}
+                </div>`);
+                } else {
+                    this.defaultOptions.success(file);
+                }
+            },
+            init: function () {
+                $(this.element).html(this.options.dictDefaultMessage);
+            },
+            dictDefaultMessage: '<div class="dz-message">Нажмите здесь или перетащите файлы для загрузки. Можно загрузить 1 файл (до 4 Мб) формата: .jpg, .jpeg, .png</div>',
+            dictInvalidFileType: 'Вы не можете загружать файлы данного типа. Разрешены: .jpg, .jpeg, .png',
+            dictMaxFilesExceeded: 'Вы  не можете загружать больше файлов',
+            dictFileTooBig: 'Максимальный размер файла - 4 Мб',
+            acceptedFiles: '.jpg, .jpeg, .png',
+            maxFilesize: 4
+        });
+    }
 });
