@@ -101,7 +101,7 @@ class Course extends \app\models\AppModel
     public function change()
     {
         $course_id = $_GET['id'];
-        $status = ($_GET['status']);
+        $status = $_GET['status'];
         $courses = \R::load('courses', $course_id);
         if (!$courses){
             throw new \Exception('Страница не найдена', 404);

@@ -19,9 +19,7 @@ class OrdersController extends AppController
             $_SESSION['error'] = 'Ваших курсов не найдено';
         }
 
-//        $order_id = $this->getRequestID();
-//        $order_course = \R::findAll('order_course', "order_id = ?", [$order_id]);
-        $this->set(compact('orders', 'pagination', 'order_course'));
+        $this->set(compact('orders', 'pagination'));
         $this->setMeta('Список курсов');
     }
 

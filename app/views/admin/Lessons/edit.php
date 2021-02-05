@@ -99,7 +99,7 @@
                         <?php foreach ($files as $file):?>
                             <tr>
                                 <td><?=$file['id'];?></td>
-                                <td><a href="<?=PATH;?>/uploads/<?=$file['name'];?>"><?=$file['name'];?></a></td>
+                                <td><a href="<?=PATH;?>/uploads/<?=$file['alias'];?>"><?=$file['name'];?></a></td>
                                 <td>
                                     <?php
                                     $lesson_id = $lesson['id'];

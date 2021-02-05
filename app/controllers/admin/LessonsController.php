@@ -167,15 +167,18 @@ class LessonsController extends AppController
                         `filesson`.`lesson`, 
                         `filesson`.`file` = `files`.`name`,
                         `files`.`id`,
-                        `files`.`name`
+                        `files`.`name`,
+                        `files`.`alias`
                         FROM `filesson`
                         JOIN `files`
                         ON `filesson`.`file` = `files`.`id`
                         WHERE `filesson`.`lesson` = ?
                         ORDER BY `filesson`.`id` ASC LIMIT $start, $perpage", [$lesson_id]
         );
+//        $file_name = $filessons['file'];
+//        $alias = \R::getRow("SELECT files.name, files.alias FROM files WHERE files.name = ?", [$file_name]);
 
-        $this->set(compact('lesson', 'filessons'));
+        $this->set(compact('lesson', 'filessons', 'alias'));
         $this->setMeta('Просмотр урока');
     }
 
@@ -209,6 +212,7 @@ class LessonsController extends AppController
         $files = \R::dispense('filesson');
         $files->file = $file_id;
         $files->lesson = $lesson_id;
+//        $files->alias = 0;
         $files = \R::store($files);
         if ($files) {
             $_SESSION['success'] = 'Файл добавлен в урок';

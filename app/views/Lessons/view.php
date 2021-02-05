@@ -43,13 +43,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($filessons as $filesson):?>
-                        <tr>
-                            <td>
-                                <a href="<?=PATH;?>/uploads/<?=$filesson['alias'];?>"><?=$filesson['name'];?>
-                            </td>
-                        </tr>
-                            <?php endforeach;?>
+                        <?php foreach ($filessons as $filesson):?>
+                            <tr>
+                                <td>
+                                    <a href="<?=PATH;?>/uploads/<?=$filesson['alias'];?>"><?=$filesson['name'];?>
+                                </td>
+                            </tr>
+                        <?php endforeach;?>
                         </tbody>
                     </table>
                 </div>

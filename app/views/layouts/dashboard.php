@@ -190,7 +190,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Мои курсы
+                                Курсы
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
@@ -232,7 +232,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
-                                Мои уроки
+                                Уроки
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
@@ -324,23 +324,6 @@
                                 <a href="<?=ADMIN;?>/requests" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Все запросы</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
-                            <p>
-                                Настройки шаблона
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?=ADMIN;?>/sections" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Секции</p>
                                 </a>
                             </li>
                         </ul>
